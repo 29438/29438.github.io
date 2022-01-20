@@ -5,12 +5,12 @@
     <title> ฅ( ̳• ◡ • ̳)ฅ</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-    <script src="/kbn/autoload.js"></script>
+    <script src="http://47.106.100.153:99/kbn/autoload.js"></script>
 <!--<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <link rel="icon" href="favicon.ico">
    <audio src="https://cdn.jsdelivr.net/gh/29438/img@master/1.mp3" id="audio"></audio> 
-   <script src="//music.clwl.online/Player/player.min.js" id="SinKingMusic" key="481"></script>
+   <!--<script src="//music.clwl.online/Player/player.min.js" id="SinKingMusic" key="481"></script>-->
 </head>
 <body>
     <div class="container">
@@ -30,18 +30,19 @@
 	<div class="content-right">
 				<div class="content index">
 				    <div class="index-box"> 
-					    <h3>旗下网站</h3>  
+					    <h3>应用</h3>  
 					    <div class="index-content">
 
 					      <a href="/" target="_blank" class="btn" >官网</a>
 					      <a href="/page/mm" target="_blank" class="btn" >小姐姐</a>
 					      <a href="/page/m/" target="_blank" class="btn" >音乐</a>
-					      <a href="/page/lc" target="_blank" class="btn" >♡历程♡</a>
+					      <a href="/page/lc" target="_blank" class="btn" >Ext</a>
 					      <a href="/page/bm" target="_blank" class="btn" >超级书签</a>
 					      <a href="/page/dy" target="_blank" class="btn" >短视频去水印</a>				
-				          <a href="https://greasyfork.org/scripts/426063-x%E5%85%A8%E7%BD%91%E8%A7%86%E9%A2%91%E4%BC%9A%E5%91%98/code/X%E5%85%A8%E7%BD%91%E8%A7%86%E9%A2%91%E4%BC%9A%E5%91%98.user.js" target="_blank" class="btn" >♡VIP♡ </a>				
-				          <a href="/page/jb/xxt.user.js" target="_blank" class="btn" >♡学习通♡</a>				
-				          <a href="https://greasyfork.org/scripts/436549-%E8%B6%85%E6%98%9F%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A9%E6%89%8Bv2/code/%E8%B6%85%E6%98%9F%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A9%E6%89%8BV2.user.js" target="_blank" class="btn" >♡学习通v2.0♡</a>
+				          <a href="https://greasyfork.org/scripts/426063-x%E5%85%A8%E7%BD%91%E8%A7%86%E9%A2%91%E4%BC%9A%E5%91%98/code/X%E5%85%A8%E7%BD%91%E8%A7%86%E9%A2%91%E4%BC%9A%E5%91%98.user.js" target="_blank" class="btn" >VIP </a>				
+				          <a href="/page/jb/xxt.user.js" target="_blank" class="btn" >学习通v1.0</a>				
+				          <a href="https://greasyfork.org/scripts/436549-%E8%B6%85%E6%98%9F%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A9%E6%89%8Bv2/code/%E8%B6%85%E6%98%9F%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A9%E6%89%8BV2.user.js" target="_blank" class="btn" >学习通v2.0</a>
+<a href="https://raw.fastgit.org/29438/img/main/js/xxt_exam.user.js" target="_blank" class="btn" >学习通考试小助手</a>				
                           <a href="/ca.crt"  class="btn" >今日校园自动签到</a>
 					    </div>
 				    </div>
@@ -110,12 +111,13 @@
          #kbn {
 	       position: fixed;
 	       bottom: 0px;
-	       width: 180px;
-	       left: 50px;
+	       width: 300px;
+	       left: 80px;
 	       z-index: 999;
               }
 		</style>
 		<img id="kbn" class="animated bounceInRight" src="https://cdn.u1.huluxia.com/g4/M02/E9/42/rBAAdmGBUdyARGhqAAMHklMclpw275.png">
+<!-- <img id="kbn" class="animated bounceInRight" src="https://s3.bmp.ovh/imgs/2021/12/9a7cccba6391bc44.png"> -->
 <script>
    $.get("/page/2/admin/html/value.php",function(data){
    $("#kbn").attr("src",data.cw_value[0].cw_bottom_img);
