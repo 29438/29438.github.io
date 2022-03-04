@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QQ自定义分享</title>
+    <meta name="keywords" content="QQ卡片,QQ卡片消息,XML卡片">
+    <meta name="description" content="Tx,QQ自定义卡片消息工具">
+    <meta name="author" content="Uomg.com" />
+    <meta name="generator" content="UomgJump" />
+    <meta name="360-site-verification" content="c349a8928dddbcde6e4ab9a31dab7928" />
+    <link rel="shortcut icon" href="http://www.aeink.com/content/templates/emlog_dux/favicon.ico">
+    <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="assets/js/Base64.js" language="JavaScript"></script>
+    <!--script type="text/javascript">alert('本工具只适合在手机端使用！');</script-->
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      input{margin-top:.5em;}
+    </style>
+  </head>
+  <body class="is-loading">
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Main -->
+          <section id="main">
+            <div>
+              <span class="logo"><img src="assets/images/vip.png" alt="自定义分享"></span>
+              <p>QQ卡片消息自定义</p>
+            </div>
+            <div>
+              <input class="" type="text" id="title" placeholder="这是一个标题">
+              <input class="" type="text" id="description" placeholder="这是一段描述">
+              <input class="" type="text" id="imgurl" placeholder="这是图片地址">
+              <input class="" type="text" id="url" placeholder="这是链接地址">
+              <select id="sid">
+                <option value="100784518">百度sid</option>
+                <option value="100686848">QQsid</option>
+                <option value="1101070898">应用宝sid</option>
+                <option value="1104466820">王者荣耀sid</option>
+                <option value="hand">手动输入</option>
+              </select>
+              <input class="" type="text" id="sidVal" placeholder="请输入sid" style="display:none;">
+              <br />
+              <input class="btn"  type="button" id="shorten" value="生成">
+              <p></p>
+            </div>
+
+          </section>
+
+        <!-- Footer -->
+          
+      </div>
+
+    <!-- Scripts -->
+      <!--[if lte IE 8]><script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+      <script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+      <script>
+        layer.msg("本工具只适合在手机端使用！",{time:800});
+        $("#sid").change(function(){ 
+          $("#sidVal").css("display","none");
+          if($(this).val()=="hand") $("#sidVal").css("display","block");
+        });
+        if ('addEventListener' in window) {
+          window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+          document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+        $('#shorten').click(function(){
+          var b = new Base64();
+          var basetitle = b.encode($('#title').val());
+          var basedesc = b.encode($('#description').val());
+          var baseimage = b.encode($('#imgurl').val());
+          var baseurl = b.encode($('#url').val());
+          var share_id=$("#sid").val()=="hand"?$("#sidVal").val():$("#sid").val();
+          window.parent.frames.location.href = "mqqapi://share/to_fri?file_type=news&src_type=web&version=1&generalpastboard=1&share_id=" + share_id + "&url=" + baseurl + "&previewimageUrl=" + baseimage + "&image_url=" + baseimage + "&title=" + basetitle + "&description=" + basedesc + "&callback_type=scheme&thirdAppDisplayName=UVE=&app_name=UVE=&cflag=0&shareType=0";
+        });
+
+      </script>
+
+  </body>
+</html>
