@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="网易云热评，QQ：2943871928，程鹏，网抑云，网抑云热评，网抑时间到，网抑时间到 都给我哭" />
+<meta name="description" content="网抑云热评摘选" />
+<link rel="shortcut icon" href="http://tv.5luck.cn/wy/wy.ico"/>
+<title>网易云热评</title>
+<script src="static/js/jquery.min.js"></script>
+</head>
+<body>
+<script>
+$.ajax({
+	type:"GET",
+	url:"https://tenapi.cn/comment",
+	dataType:"json",
+	scriptCharset: 'utf-8',
+	    success:function (data) { 
+			$("#text").html('<div class="content">'+data.data.content+'</div><br><div class="name">来自网易云用户 '+data.data.name+'</div><div class="song">在《'+data.data.song+'》下的评论</div>');
+		},
+});
+</script>
+
+<style>
+body{
+	font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu ;
+	background-color: #af2c31;
+}
+.card{
+	margin: 30px;
+	padding: 15px;
+	color: #f2e6e0;
+}
+.content{
+	text-align: center;
+	font-weight: 900;
+}
+.name{
+	text-align: right;
+	font-size: 18px;
+}
+.song{
+	margin-top: 10px;
+	text-align: right;
+	font-size: 17px;
+}
+.comment{
+	padding:20px 20px; 
+	padding-bottom: 0px;
+	margin: 10% 30% auto 30%;
+	border:2px solid #fff; 
+	position:relative;	
+	border-radius: 4px;
+	background: #af2c31;
+	box-shadow:  10px -10px 0px #fcfcfc85, 
+             -10px 10px 0px transparent;
+}
+@media screen and (max-width: 700px){
+    .comment{
+	padding:20px 20px; 
+	margin: 10% 1% auto 1% ;
+	border:2px solid #fff; 
+	position:relative;	
+	border-radius: 4px;
+    }
+}
+.comment span{
+	width:0; 
+	height:0; 
+	font-size:0; 
+	overflow:hidden; 
+	position:absolute;
+}
+.comment span.bot{
+    border-width:20px; 
+    border-style:solid dashed dashed; 
+    border-color:#fff transparent transparent; 
+    left:15px; 
+    bottom:-41px;
+}
+.comment span.top{
+    border-width:20px; 
+    border-style:solid dashed dashed; 
+    border-color:#af2c31 transparent transparent; 
+    left:15px; 
+    bottom:-38px;
+} 
+input{
+	font-family:"方正宋刻本秀楷体,方正经黑,Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu ;
+	background-color: #af2c31;
+        
+}
+</style>
+<div class="card">	
+	<div class="comment">
+		<span class="bot"></span><span class="top"></span>
+                <input type="button" value="Next" style="color:white" onclick="location.replace(location)">
+            <p id="text" style="font-size: 2rem;">Loading......</p>
+	</div>	
+</div>
+</body>
+</html>
