@@ -1,0 +1,28 @@
+{
+    "header": [
+        " *   ",
+        " *   文件描述：本文件为网页资源信息",
+        " *   success字段为下载保存成功的资源;failures字段则为下载保存失败的资源URL",
+        " *   success字段为标准树结构，每一层资源父子关系、URL和保存路径清晰明了",
+        " *   本文件仅为记录检测到的网页资源以便于调试，非专业人员可将本文件删除",
+        " *   详细介绍请参考: https://bazhan.me/faq",
+        " *   "
+    ],
+    "success": [
+        {
+            "url": "http://220.167.105.5/",
+            "path": "index.html",
+            "children": [
+                {
+                    "url": "http://220.167.105.5/images/Ua1197e99917b40cfab888108a8d218688.jpg",
+                    "path": "images/Ua1197e99917b40cfab888108a8d218688.jpeg"
+                },
+                {
+                    "url": "http://220.167.105.5/media/cnm.mp3",
+                    "path": "media/cnm.mp3"
+                }
+            ]
+        }
+    ],
+    "failures": []
+}
