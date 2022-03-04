@@ -1,0 +1,21 @@
+<section class="main-container">
+  
+  <div class="row-five">
+    <div class="box-title"><b>“<?php echo $搜索词;?>”的搜索结果</b></div>
+    <div class="box-body"> <?php $ykss=$yks;unset($yks);foreach($数据 as $yks){?>
+      <div class="box-item" style="width:48%;margin-right:2%;margin-bottom:10px;padding:20px"> 
+        <div class="meta">
+        <div class="item-name"><a class="movie-name" target="_blank" title="<?php echo $yks[name];?>" href="<?php echo yu(info,$yks[id]);?>">片名：<?php echo $yks[name];?></a></div><br>
+          <em>类别：<strong><span><?php echo $yks[type];?></span></strong></em><br><em>更新时间：<strong><span><?php echo $yks[last];?></span></strong></em> </div>
+      </div><?php }$yks=$ykss;?>
+      
+	  
+	  
+       </div>
+  </div>
+  <div class="pagenav">
+    <ul class="pagination">
+      <a target="_self" href="<?php echo $首页;?>" class="pagelink_a">首页</a>&nbsp;<a target="_self" href="<?php echo $上一页;?>" class="pagelink_a">上一页</a>&nbsp;<a target="_self" href="<?php echo $下一页;?>" class="pagelink_a">下一页</a>&nbsp;<a target="_self" href="<?php echo $尾页;?>" class="pagelink_a">尾页</a>
+    </ul>
+  </div>
+</section>
