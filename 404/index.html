@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href=".">
+  <meta charset="UTF-8">
+      <link rel="stylesheet" href="./www.cp520.online/css/normalize.css">
+      <link rel="stylesheet" href="./www.cp520.online/css/style.css">
+      <title>404</title>
+<meta name="Keywords" content="喵咪没有鱼,黑客网页,黑客进攻,模拟,网站源码,学习资料,影视">
+<meta name="description" content="像电影里黑客高手一样敲代码攻击入侵网站！装13神器 ！tv.5luck.cn">
+<link rel="shortcut icon" href="tv.5luck.cn/ico/favicon.ico">
+
+ <style>
+ *{padding:0;margin:0}
+ html{overflow:hidden}
+  </style>
+
+<style>
+img{
+ width: 150px;
+    border-radius: 200px;
+    box-shadow: 0px 0px 40px rgb(214, 6, 34);
+    border: 3px solid #4CC501;
+    -webkit-transition: 0.4s;
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+}
+ /* 
+img:hover{
+    transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+}*/
+</style>
+
+ <script></script><script></script></head>
+ <body>
+
+    <!-- 掉落代码 -->
+ <canvas id="canvas" style="background:#111" width="1820" height="855"></canvas>
+
+ <script type="text/javascript">
+  
+  window.onload = function(){
+   //获取画布对象
+   var canvas = document.getElementById("canvas");
+   //获取画布的上下文
+   var context =canvas.getContext("2d");
+   //获取浏览器屏幕的宽度和高度
+   var W = window.innerWidth;
+   var H = window.innerHeight;
+   //设置canvas的宽度和高度
+   canvas.width = W;
+   canvas.height = H;
+   //每个文字的字体大小
+   var fontSize = 28;
+   //计算列
+   var colunms = Math.floor(W /fontSize); 
+   //记录每列文字的y轴坐标
+   var drops = [];
+   //给每一个文字初始化一个起始点的位置
+   for(var i=0;i<colunms;i++){
+    drops.push(0);
+   }
+
+   //运动的文字
+   var str ="101 0 10 11";
+   //4:fillText(str,x,y);原理就是去更改y的坐标位置
+   //绘画的函数
+   function draw(){
+    context.fillStyle = "rgba(0,0,0,0.05)";
+    context.fillRect(0,0,W,H);
+    //给字体设置样式
+    context.font = "700 "+fontSize+"px  微软雅黑";
+    //给字体添加颜色
+    context.fillStyle ="#00cc33";//可以rgb,hsl, 标准色，十六进制颜色
+    //写入画布中
+    for(var i=0;i<colunms;i++){
+     var index = Math.floor(Math.random() * str.length);
+     var x = i*fontSize;
+     var y = drops[i] *fontSize;
+     context.fillText(str[index],x,y);
+     //如果要改变时间，肯定就是改变每次他的起点
+     if(y >= canvas.height && Math.random() > 0.99){
+      drops[i] = 0;
+     }
+     drops[i]++;
+    }
+   };
+
+   function randColor(){
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return "rgb("+r+","+g+","+b+")";
+   }
+
+   draw();
+   setInterval(draw,30);
+  };
+
+ </script> 
+ <!-- 音乐代码 -->
+ <audio autoplay>
+ <source src="http://14237530.d.yyupload.com/down/14237530/2017年10月/themass.mp3" loop="999" type="audio/mpeg">
+        </audio>
+<script>var _hmt = _hmt || [];(function() {  var hm = document.createElement("script");  hm.src = "https://hm.baidu.com/hm.js?d39cb0fe4afad48ac311d98ed5b4793f";  var s = document.getElementsByTagName("script")[0];   s.parentNode.insertBefore(hm, s);})();</script>
+ <!-- 红色鼠标  喜欢带走 -->
+ <style type="text/css">body, a, a:link{cursor:url(./www.cp520.online/cur/cur117.cur), default;} a:hover {cursor:url(./www.cp520.online/cur/cur116.cur),wait;}</style>
+</html>
