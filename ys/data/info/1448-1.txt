@@ -1,0 +1,1 @@
+{"list":{"video":{"last":"2020-06-06 21:13:55","id":"1448","tid":"41","name":"金艺贞002","type":"福利短视频","pic":"https://zkzy2.com/upload/vod/2020-06-06/15914494051.jpg","lang":"韩语","area":"韩国","year":"2020","state":"0","note":"BD","actor":"金艺贞","dl":{"dd":"BD$https://zkp2pzy.com/20200607/oXwJWhR8/index.m3u8"}}}}
