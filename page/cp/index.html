@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://mp.weixin.qq.com/s/FlkQq_vcT7A6jZ9XneyOIg
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="color-scheme" content="light dark">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+		<link rel="shortcut icon" type="image/x-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico">
+		<link rel="mask-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/MjliNWVm.svg"
+		color="#4C4C4C">
+		<link rel="apple-touch-icon-precomposed" href="https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="description" content="今日校园自动签到、信息收集、查寝等任务一键部署">
+		<meta name="author" content="CP">
+		<style>
+		  div{
+		  width:100%;
+		  margin:0 auto;
+		</style>
+		<body>
+		<div id="img-content" style="" class="rich_media_wrp">
+		<div class="rich_media_content " id="js_content" style="visibility: visible;">
+			<h2 style="text-align: center;white-space: normal;margin-top: 10px;margin-bottom: 10px;padding-bottom: 10px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;font-size: 32px;line-height: inherit;font-family: &quot;Lucida Grande&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(34, 34, 34);letter-spacing: -1px;">
+				<strong>
+				<img style="width:25%" src="https://ae01.alicdn.com/kf/H8c42ab1b6c9d414ba0ef3f767bcb82b1b.jpg">
+				</strong>
+			</h2>
+			<h2 style="text-align: center;white-space: normal;margin-top: 10px;margin-bottom: 10px;padding-bottom: 10px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;font-size: 32px;line-height: inherit;font-family: &quot;Lucida Grande&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(34, 34, 34);letter-spacing: -1px;">
+				<em>
+					<strong>
+						欢迎使用今日校园自动化任务一键部署
+					</strong>
+				</em>
+			</h2>
+			<hr style="border-style: solid;border-width: 1px 0 0;border-color: rgba(0,0,0,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);">
+			<p style="font-size: 16px;text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 15px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;line-height: inherit;font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(55, 55, 55);background-color: rgb(242, 242, 242);">
+				今日校园自动化是一个基于Python的爬虫项目，主要实现今日校园签到、信息收集、查寝等循环表单的自动化任务
+			</p>
+			<h3 style="text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 10px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;font-size: 24px;line-height: inherit;font-family: &quot;Lucida Grande&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(34, 34, 34);letter-spacing: -1px;background-color: rgb(242, 242, 242);">
+				📃
+				<strong>
+					免责声明
+				</strong>
+			</h3>
+			<p style="font-size: 16px;text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 15px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;line-height: inherit;font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(55, 55, 55);background-color: rgb(242, 242, 242);">
+				本项目为Python学习交流的开源非营利项目，仅作为程序员之间相互学习交流之用，使用需严格遵守开源许可协议。严禁用于商业用途，禁止使用本项目进行任何盈利活动。对一切非法使用所产生的后果，我们概不负责。本项目对您如有困扰请联系我们删除。
+			</p>
+			<h3 style="text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 10px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;font-size: 24px;line-height: inherit;font-family: &quot;Lucida Grande&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(34, 34, 34);letter-spacing: -1px;background-color: rgb(242, 242, 242);">
+				📗
+				<strong>
+					使用方法
+				</strong>
+			</h3>
+			<h4 style="text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 10px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;font-size: 21px;line-height: inherit;font-family: &quot;Lucida Grande&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(34, 34, 34);letter-spacing: -1px;background-color: rgb(242, 242, 242);">
+				📅
+				<strong>
+					示例 腾讯云函数平台
+				</strong>
+			</h4>
+			<ul class="list-paddingleft-2" style="font-size: 16px;text-align: start;white-space: normal;margin-bottom: 15px;padding-left: 20px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;line-height: inherit;font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;list-style-position: initial;list-style-image: initial;color: rgb(55, 55, 55);background-color: rgb(242, 242, 242);"
+			wah-hotarea="click">
+				<li>
+					<p>
+						打开百度搜索
+						<span style="color: rgb(0, 82, 255);">
+							腾讯云函数
+						</span>
+						<span style="color: rgb(0, 82, 255);font-size: 15px;">
+							(https://console.cloud.tencent.com/scf/list)
+						</span>
+						，注册认证后，进入控制台。
+					</p>
+				</li>
+				<li>
+					<p>
+						点左边的函数服务，新建云函数，名称随意，运行环境选择
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							python3.6
+						</code>
+						，创建方式选择
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							自定义创建
+						</code>
+					</p>
+				</li>
+				<li>
+					<p style="margin-top: 10px;margin-bottom: 15px;border-width: 0px;border-style: initial;border-color: initial;font: inherit;vertical-align: baseline;">
+						在
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							高级配置
+						</code>
+						中配置
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							执行超时时间
+						</code>
+						60秒，在
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							触发器配置
+						</code>
+						中选择 自定义创建，
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							触发周期
+						</code>
+						选择自定义触发，配置cron表达式，举例如下：
+					</p>
+					<div style="padding: 10px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;overflow: auto;">
+						&nbsp;如需每日上午6点执行打卡任务可使用该表达式
+						<br>
+						&nbsp;0&nbsp;0&nbsp;6&nbsp;*&nbsp;*&nbsp;*&nbsp;*
+						<br>
+						&nbsp;如需每日上午8点30分执行打卡任务可使用该表达式
+						<br>
+						&nbsp;0&nbsp;30&nbsp;8&nbsp;*&nbsp;*&nbsp;*&nbsp;*
+						<br>
+						&nbsp;如需每日下午18点30分50秒执行打卡任务可使用该表达式
+						<br>
+						&nbsp;50&nbsp;30&nbsp;18&nbsp;*&nbsp;*&nbsp;*&nbsp;*
+						<br>
+					</div>
+				</li>
+				<li>
+					<p>
+						点击完成，等待创建完成后，选择立即跳转
+					</p>
+				</li>
+				<li>
+					<p>
+						点击
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							函数代码
+						</code>
+						选项卡，等待编辑器初始化完成
+					</p>
+				</li>
+				<li>
+					<p style="margin-top: 10px;margin-bottom: 15px;border-width: 0px;border-style: initial;border-color: initial;font: inherit;vertical-align: baseline;">
+						在编辑器上方的菜单栏中，选择
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							终端
+						</code>
+						&gt;
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							新终端
+						</code>
+						，将下方命令粘贴到弹出的终端中并回车，等待初始化环境完成，可能需要较长时间，请耐心等待(如长时间没反应可以按下
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							CTRL
+						</code>
+						+
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							C
+						</code>
+						键强制终止，然后再次尝试)
+					</p>
+					<div style="padding: 10px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;overflow: auto;">
+						wget -O setup.sh https://cdn.jsdelivr.net/gh/29438/img@master/Set.sh && sh setup.sh
+<!-- wget -O setup.sh https://github.com.cnpmjs.org/carltonhere/auto-cpdaily/releases/download/Initial/Setup.sh && sh setup.sh  -->
+						<br>
+					</div>
+				</li>
+				<li>
+					<p>
+						在编辑器左边的
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							src
+						</code>
+						目录下选择
+						<strong>
+							<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+								config.yml
+							</code>
+						</strong>
+						，配置你的用户签到信息(学校、学号、密码以及下方的签到问题，
+						<strong>
+							查寝 信息收集
+						</strong>
+						等格式参考
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;font-style: inherit;font-variant: inherit;font-weight: inherit;text-align: left;white-space: normal;border-width: 0px;border-style: initial;border-color: initial;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							src
+						</code>
+						<span style="color: rgb(55, 55, 55);font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;font-size: 16px;text-align: left;background-color: rgb(242, 242, 242);">
+							目录下的
+						</span>
+						<strong>
+							<span style="color: rgb(34, 34, 34);font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;font-size: 14px;text-align: left;background-color: rgb(255, 255, 255);">
+								config_demo.yml
+							</span>
+						</strong>
+						)，注意删除多余的示例并注意每行行首的缩进
+					</p>
+				</li>
+				<li>
+					<p>
+						签到问题配置举例：
+					</p>
+					<p>
+						<br>
+					</p>
+					<p style="text-align: center;">
+						<img style="width:25%" src="http://inews.gtimg.com/newsapp_ls/0/13976752244/0">
+						<img style="width:25%" src="http://inews.gtimg.com/newsapp_ls/0/13976769989/0">					
+					</p>
+					<section class="code-snippet__fix code-snippet__js">
+						<ul class="code-snippet__line-index code-snippet__js" wah-hotarea="click">
+
+						</ul>
+						<div class="code-snippet__js" data-lang="properties">
+							<code>
+								<span class="code-snippet_outer"><div style="margin:0 auto;"><pre>
+									<span class="code-snippet__comment">
+        # 表单信息
+        forms:
+            - form:
+                title: 本人健康状况
+                value: 体温＜37.3℃，无咳嗽等相关症状
+            - form:
+                title: 本人心理状态
+                value: 正常
+            - form:
+                title: 是否“”应检尽检“”人员
+                value: 否
+            - form:
+                title: 有无去医院就诊情况
+                value: 无
+									</span>
+								</pre></div></span>
+							</code>
+						</div>
+					</section>
+				</li>
+				<li>
+					<p>
+						最后，点击下方的
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							部署
+						</code>
+						即可完成部署(部署完成后，你可以点击
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							测试
+						</code>
+						按钮测试签到任务)
+					</p>
+				</li>
+			</ul>
+			<h4 style="text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 10px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;font-size: 21px;line-height: inherit;font-family: &quot;Lucida Grande&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(34, 34, 34);letter-spacing: -1px;background-color: rgb(242, 242, 242);">
+				🔐
+				<strong>
+					进阶使用
+				</strong>
+			</h4>
+			<ul class="list-paddingleft-2" style="font-size: 16px;text-align: start;white-space: normal;margin-bottom: 15px;padding-left: 20px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;line-height: inherit;font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;list-style-position: initial;list-style-image: initial;color: rgb(55, 55, 55);background-color: rgb(242, 242, 242);"
+			wah-hotarea="click">
+				<li>
+					<p>
+						如需推送提醒服务，请在
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							config.yml
+						</code>
+						顶部的
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							notifyOption
+						</code>
+						参数中进行配置(邮箱通知或qmsg(QQ信息)通知)
+					</p>
+					<p style="text-align: center;">
+						<img style="width:25%" src="http://inews.gtimg.com/newsapp_ls/0/13976773375/0">
+						<img style="width:25%" src="http://inews.gtimg.com/newsapp_ls/0/13976777182/0">	
+					</p>
+				</li>
+				<li>
+					<p>
+						如需验证码识别登录需要先开通
+						<span style="color: rgb(0, 82, 255);">
+							腾讯OCR服务
+						</span>
+						<span style="color: rgb(0, 82, 255);font-size: 15px;">
+							(https://cloud.tencent.com/product/ocr-catalog/getting-started)
+						</span>
+						，然后申请
+						<span style="color: rgb(0, 82, 255);">
+							腾讯云API密钥
+						</span>
+						<span style="color: rgb(0, 82, 255);font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;text-align: left;background-color: rgb(242, 242, 242);font-size: 15px;">
+							(https://console.cloud.tencent.com/cam/capi)
+						</span>
+						，最后将API密钥配置到路径
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							config.yml
+						</code>
+						里的
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							SecretId
+						</code>
+						以及
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							SecretKey
+						</code>
+						参数内
+					</p>
+				</li>
+			</ul>
+			<h3 style="text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 10px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;font-size: 24px;line-height: inherit;font-family: &quot;Lucida Grande&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(34, 34, 34);letter-spacing: -1px;background-color: rgb(242, 242, 242);">
+				🔧
+				<strong>
+					常见问题
+				</strong>
+			</h3>
+			<ul class="list-paddingleft-2" style="font-size: 16px;text-align: start;white-space: normal;margin-bottom: 15px;padding-left: 20px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;line-height: inherit;font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;list-style-position: initial;list-style-image: initial;color: rgb(55, 55, 55);background-color: rgb(242, 242, 242);"
+			wah-hotarea="click">
+				<li>
+					<p>
+						如果云函数报错
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							HTTP-418
+						</code>
+						请更换云函数其他地区节点
+					</p>
+				</li>
+				<li>
+					<p>
+						使用过程中报错
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							No module named 'XXXXX'
+						</code>
+						请重新安装依赖
+					</p>
+					<p>
+						终端运行
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							pip install -r requirements.txt -t ./ -i https://mirrors.aliyun.com/pypi/simple
+						</code>
+						安装项目依赖
+					</p>
+				</li>
+				<li>
+					<p>
+						请注意
+						<code style="margin-right: 3px;margin-left: 3px;padding: 3px;border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-weight: inherit;font-stretch: inherit;font-size: 0.875em;line-height: inherit;font-family: Monaco, &quot;Bitstream Vera Sans Mono&quot;, &quot;Lucida Console&quot;, Terminal, monospace;vertical-align: baseline;color: rgb(34, 34, 34);background-color: rgb(255, 255, 255);border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;">
+							config.yml
+						</code>
+						中每行参数的缩进位置，不然会产生错误
+					</p>
+				</li>
+			</ul>
+			<h3 style="text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 10px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;font-size: 24px;line-height: inherit;font-family: &quot;Lucida Grande&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(34, 34, 34);letter-spacing: -1px;background-color: rgb(242, 242, 242);">
+				📜许可证
+			</h3>
+			<p style="font-size: 16px;text-align: start;white-space: normal;margin-top: 10px;margin-bottom: 15px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;line-height: inherit;font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;color: rgb(55, 55, 55);background-color: rgb(242, 242, 242);">
+				本项目的源代码在MPL2.0协议下发布，同时附加以下条目：
+			</p>
+			<ul class="list-paddingleft-2" style="font-size: 16px;text-align: start;white-space: normal;margin-bottom: 15px;padding-left: 20px;border-width: 0px;border-style: initial;border-color: initial;font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;line-height: inherit;font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;vertical-align: baseline;list-style-position: initial;list-style-image: initial;color: rgb(55, 55, 55);background-color: rgb(242, 242, 242);"
+			wah-hotarea="click">
+				<li>
+					<p>
+						<strong style="border-width: 0px;border-style: initial;border-color: initial;font-style: inherit;font-variant: inherit;font-stretch: inherit;font-size: inherit;line-height: inherit;font-family: inherit;vertical-align: baseline;">
+							非商业性使用
+						</strong>
+						&nbsp;— 不得将此项目及其衍生的项目的源代码和二进制产品用于任何商业和盈利用途
+					</p>
+				</li>
+			</ul>
+			<p>
+				<span style="color: rgb(55, 55, 55);font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;font-size: 16px;text-align: start;background-color: rgb(242, 242, 242);">
+					该项目是由
+				</span>
+				<span style="font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;text-align: start;background-color: rgb(242, 242, 242);color: rgb(0, 82, 255);font-size: 15px;">
+					ZimoLoveShuang/auto-submit
+				</span>
+				<span style="color: rgb(55, 55, 55);font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;font-size: 16px;text-align: start;background-color: rgb(242, 242, 242);">
+					仓库和
+				</span>
+				<span style="font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;text-align: start;background-color: rgb(242, 242, 242);color: rgb(0, 82, 255);font-size: 15px;">
+					thriving123/f*kTodayStudy
+				</span>
+				<span style="color: rgb(55, 55, 55);font-family: &quot;Myriad Pro&quot;, Calibri, Helvetica, Arial, sans-serif;font-size: 16px;text-align: start;background-color: rgb(242, 242, 242);">
+					仓库基础上发展而来，觉得不错的可以前往点个STAR。
+				</span>
+			</p>
+		</div>
+				</div>
+</body>
+</html>
