@@ -1,4 +1,4 @@
-var url = "https://29438.github.io";  //要打开的网页地址
+var url = "9438.github.io";  //要打开的网页地址
 var features = "height=500, width=800, top=100, left=100, toolbar=no, menubar=no,
     scrollbars=no,resizable=no, location=no, status=no";  //设置新窗口的特性
 //动态生成一个超链接
