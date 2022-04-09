@@ -10,7 +10,7 @@
         "wallpaperSlideTime": 1519442460788,
         "wallpaperSlideIndex": 8,
         "openMax": 9,
-        "idCounter": 291,
+        "idCounter": 292,
         "themeColor": "rgba(2,35,64,1)",
         "autoThemeColor": true,
         "wallpapers": [
@@ -2059,6 +2059,39 @@
             "url": "/page/fire",
             "customTile": "https://pic.rmb.bdstatic.com/bjh/24e4256eb3e065d7674c883e38dd3708.png",
             "urlRandomToken": false
+        },
+        "app-291": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://s1.imagehub.cc/images/2021/01/06/_20210106165215.png",
+                "bg": ""
+            },
+            "openMode": "max",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "QQ在线状态",
+            "url": "/page/qstate",
+            "customTile": "https://s1.imagehub.cc/images/2021/01/06/_20210106165215.png",
+            "urlRandomToken": false
         }
     },
     "shortcuts": [
@@ -2356,6 +2389,12 @@
         {
             "app": "app-289",
             "title": "烟花✨",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-291",
+            "title": "QQ在线状态",
             "params": {},
             "hash": ""
         }
