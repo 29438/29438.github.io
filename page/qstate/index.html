@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8"/>
+        <title>QQ在线状态修改</title>
+        <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+    </head>
+    <body style="background-color: #F2F2F2;">
+        
+<!--        <ul class="layui-nav" lay-filter="">
+            <li class="layui-nav-item layui-this"><a href="/">首页</a></li>
+            <li class="layui-nav-item"><a href="/">官网</a></li>
+        </ul> -->
+        
+        
+        <div class="layui-container">
+            <div class="layui-row layui-col-space15"> 
+                <div class="layui-col">
+                    
+                    <div class="layui-card">
+                        <div class="layui-card-header">IMEI获取教程</div>
+                        <div class="layui-card-body">
+                            1.<a href="http://t.cn/A6Z4KWp2">点击我进入QQ小程序</a><br>
+                            2.点击设备信息<br>
+                            3.安卓的IMEI为androidID或msfImei,IOS的为msg_identifier
+                        </div>
+                    </div>
+                    
+                    <div class="layui-card">
+                        <div class="layui-card-header">控制台</div>
+                        <div class="layui-card-body">
+                            
+                            <div class="list-group-item" id="qr_code"></div>
+                            <button type="button" class="layui-btn" onclick="get_result()">我已扫描登录</button>
+                            <br>
+                            <br>
+                            
+                            <form class="layui-form layui-form-pane">
+                                
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">uin</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" id="uin" autocomplete="off" placeholder="请扫描上方二维码" value="" class="layui-input"  >
+                                    </div>
+                                </div>
+                                
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">skey</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" id="skey" autocomplete="off" placeholder="请扫描上方二维码" value="" class="layui-input"  >
+                                    </div>
+                                </div>
+                                
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">pt4_token</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" id="pt4_token" autocomplete="off" placeholder="请扫描上方二维码" value="" class="layui-input"  >
+                                    </div>
+                                </div>
+                                
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">IMEI</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" id="imei" autocomplete="off" placeholder="请输入IMEI" class="layui-input"  >
+                                    </div>
+                                </div>
+                                
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">手机型号</label>
+                                    <div class="layui-input-block">
+                                        <select id="model">										
+                                            <option value="iphone13promax" selected="">iPhone 13 Pro Max</option>
+                                            <option value="iphone4">iPhone 4</option>
+                                            <option value="ipad">iPad</option>
+                                            <option value="iqooneo">iQOO Neo</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                      <button type="button" class="layui-btn" onclick="revise()">修改</button>
+                                    </div>
+                                  </div>
+                                
+                            <form>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-body" style="text-align: center">
+                                Copyright © 2022 <a href="/">CP</a>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://www.layuicdn.com/layui/layui.js"></script>
+        <script type="text/javascript">
+            layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element'], function() {
+              var laydate = layui.laydate //日期
+              ,laypage = layui.laypage //分页
+              ,layer = layui.layer //弹层
+              ,table = layui.table //表格
+              ,carousel = layui.carousel //轮播
+              ,upload = layui.upload //上传
+              ,element = layui.element; //元素操作 等等...
+            });
+        </script>
+        
+        <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+        
+        <script>
+            var qrsig, uin, skey, pt4_token, scan;
+            
+            $(document).ready(function(){
+            		get_qr_code();
+            });
+            
+            function get_qr_code(){
+                var qr_code;
+                
+                axios.get('https://api.heroa.cn:3403/qq/qr_code_login/?type=get')
+                    .then(function(response){
+                        qr_code = response['data']['information']['qr_code'];
+                        qrsig = response['data']['information']['qr_sig'];
+                        $('#qr_code').html('<img id="qr_code" onclick="get_qr_code()" src="' + qr_code + '" title="点击刷新">');
+                        scan = false;
+                });
+            }
+            
+            function get_result(){
+                var state;
+                
+                axios.get('https://api.heroa.cn:3403/qq/qr_code_login/?type=result&qr_sig=' + qrsig)
+                    .then(function(response){
+                        state = response['data']['information']
+                        if(scan == true){
+                            layer.msg('小朋友，您这也太懒了吧，点击图片换个二维码。');
+                        }
+                        else if(state == '未失效'){
+                            layer.msg('小朋友，您还未登录呢！');
+                        }
+                        else if(state == '认证中'){
+                            layer.msg('小朋友，正在认证请耐心等待哦！');
+                        }
+                        else if(state['state'] == '已登录'){
+                            var cookie;
+                            cookie = response['data']['information']['cookie'];
+                            uin = cookie['uin'];
+                            skey = cookie['skey'];
+                            pt4_token = cookie['pt4_token'];
+                            $('#uin').val(uin);
+                            $('#skey').val(skey);
+                            $('#pt4_token').val(pt4_token);
+                            scan = true;
+                        }
+                        else if(state['state'] == '已失效'){
+                            layer.msg('小朋友，这个二维码失效了！');
+                        }
+                        else{
+                            layer.msg('小朋友，恭喜您发现了bug，请及时与作者联系。');
+                        }
+                });
+            }
+            
+            function revise(){
+                var state, model, imei;
+                
+                model = $('#model').val();
+                imei = $('#imei').val();
+                uin = $('#uin').val();
+                skey = $('#skey').val();
+                pt4_token = $('#pt4_token').val();
+                
+                if(imei == '' || model == '' || uin == '' || skey == ''  || pt4_token == ''){
+                    layer.msg('小朋友，您还没登录呢');
+                }
+                else{
+                    axios.get('https://api.heroa.cn:3403/qq/revise_online_model/?model=' + model + '&imei=' + imei + '&uin=' + uin + '&skey=' + skey + '&pt4_token=' + pt4_token)
+                        .then(function(response){
+                            state = response['data']['information']
+                            layer.msg(state);
+                    });
+                }
+            }
+        </script>
+        
+    </body>
+</html>
