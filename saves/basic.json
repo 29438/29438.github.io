@@ -10,7 +10,7 @@
         "wallpaperSlideTime": 1519442460788,
         "wallpaperSlideIndex": 8,
         "openMax": 9,
-        "idCounter": 295,
+        "idCounter": 296,
         "themeColor": "rgba(2,35,64,1)",
         "autoThemeColor": true,
         "wallpapers": [
@@ -2029,14 +2029,14 @@
         },
         "app-292": {
             "addressBar": false,
-            "autoRun": 1,
+            "autoRun": 0,
             "background": false,
             "badge": 0,
             "desc": "",
             "icon": {
                 "type": "img",
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/89696/4/26877/6562/628a2985Ee2d4c557/e0db1951d53a3be4.png",
-                "bg": "#ffffff"
+                "bg": ""
             },
             "openMode": "outer",
             "plugin": false,
@@ -2092,6 +2092,12 @@
                 {
                     "app": "ylui-apps-calculator",
                     "title": "科学计算器",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "app": "app-292",
+                    "title": "西瓜视频",
                     "params": {},
                     "hash": ""
                 }
@@ -2455,6 +2461,17 @@
                     "app": "app-289",
                     "title": "烟花✨",
                     "i": "290",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "x": 0,
+                    "y": 13,
+                    "w": 2,
+                    "h": 2,
+                    "app": "app-292",
+                    "title": "西瓜视频",
+                    "i": "295",
                     "params": {},
                     "hash": ""
                 }
