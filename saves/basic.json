@@ -619,7 +619,7 @@
                 "content": "https://cdn.u1.huluxia.com/g3/M01/80/43/wKgBOV3zH-iAazjgAAAo1pOdVQc175.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -652,7 +652,7 @@
                 "content": "https://cdn.u1.huluxia.com/g3/M01/80/44/wKgBOV3zIGuATmbdAAA-sbVmnsg555.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -2071,7 +2071,7 @@
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/112014/5/29018/2938/62a7db5dEe2b55af3/44b7657430b39378.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
