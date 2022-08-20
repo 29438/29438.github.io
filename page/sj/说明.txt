@@ -1,0 +1,12 @@
+json格式返回：
+http://域名/api.php?type=json
+
+图片方式返回:
+http://域名/api.php?type=image
+
+
+json格式返回：
+http://域名/api.php?type=json
+
+视频方式返回:
+http://域名/api.php?type=video
