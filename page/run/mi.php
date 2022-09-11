@@ -1,10 +1,8 @@
 <?php
 /**
 * 名称：小米运动接口
-* 出处：https://www.yowal.cn/
 * 方式：POST/GET
 * 参数：phone,password,steps
-* 时间：2021年08月09日
 */
 error_reporting(0);
 date_default_timezone_set('PRC');
