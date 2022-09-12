@@ -10,7 +10,7 @@
         "wallpaperSlideTime": 1519442460788,
         "wallpaperSlideIndex": 8,
         "openMax": 9,
-        "idCounter": 306,
+        "idCounter": 307,
         "themeColor": "rgba(2,35,64,1)",
         "autoThemeColor": true,
         "wallpapers": [
@@ -1309,7 +1309,7 @@
             "desc": "",
             "icon": {
                 "type": "img",
-                "content": "https://dd-static.jd.com/ddimg/jfs/t1/101377/33/30065/133821/628a2e05E54374fa0/ba4de222096b9c00.png",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/174235/6/29003/79086/6300d2a4E8356e85c/d4a531439ed22d2a.png",
                 "bg": ""
             },
             "openMode": "outer",
@@ -2147,7 +2147,7 @@
                 "y": "y*0.05"
             },
             "version": "1.0.0",
-            "poweredBy": "",
+            "poweredBy": "https://dd-static.jd.com/ddimg/jfs/t1/174235/6/29003/79086/6300d2a4E8356e85c/d4a531439ed22d2a.png",
             "resizable": true,
             "single": false,
             "size": {
@@ -2156,7 +2156,7 @@
             },
             "title": "随机小姐姐",
             "url": "/page/sj",
-            "customTile": "https://dd-static.jd.com/ddimg/jfs/t1/166604/27/29614/42285/6300d08aE046ef595/19cca88851bd4c17.png",
+            "customTile": "https://dd-static.jd.com/ddimg/jfs/t1/174235/6/29003/79086/6300d2a4E8356e85c/d4a531439ed22d2a.png",
             "urlRandomToken": false
         },
         "app-299": {
@@ -2322,6 +2322,39 @@
             "title": "在线之家",
             "url": "https://zxzj.vip/",
             "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-306": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/189544/33/28245/9223/631f34d7E6e9f9c13/d447432780fd2446.png",
+                "bg": ""
+            },
+            "openMode": "max",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "跑路(test)",
+            "url": "/page/paolu",
+            "customTile": "/page/paolu",
             "urlRandomToken": true
         }
     },
@@ -2498,6 +2531,12 @@
             "hash": ""
         },
         {
+            "app": "app-272",
+            "title": "Creo8.0破解版",
+            "params": {},
+            "hash": ""
+        },
+        {
             "app": "app-202",
             "title": "3D-Element",
             "params": {},
@@ -2524,6 +2563,36 @@
         {
             "app": "app-275",
             "title": "职教云自动签到",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-253",
+            "title": "小游戏",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-211",
+            "title": "燃鹅向前冲",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-207",
+            "title": "网易云热评",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-209",
+            "title": "微信改步数",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-243",
+            "title": "随机小姐姐",
             "params": {},
             "hash": ""
         },
@@ -2581,50 +2650,14 @@
             "hash": ""
         },
         {
-            "app": "app-211",
-            "title": "燃鹅向前冲",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-207",
-            "title": "网易云热评",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-253",
-            "title": "小游戏",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-209",
-            "title": "微信改步数",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-243",
-            "title": "小姐姐视频",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-298",
-            "title": "随机小姐姐",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-272",
-            "title": "Creo8.0破解版",
-            "params": {},
-            "hash": ""
-        },
-        {
             "app": "app-274",
             "title": "超级书签",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-278",
+            "title": "在线阅读",
             "params": {},
             "hash": ""
         },
@@ -2635,14 +2668,14 @@
             "hash": ""
         },
         {
-            "app": "app-218",
-            "title": "Extension",
+            "app": "app-244",
+            "title": "短视频去水印",
             "params": {},
             "hash": ""
         },
         {
-            "app": "app-244",
-            "title": "短视频去水印",
+            "app": "app-218",
+            "title": "Extension",
             "params": {},
             "hash": ""
         },
@@ -2659,8 +2692,8 @@
             "hash": ""
         },
         {
-            "app": "app-278",
-            "title": "在线阅读",
+            "app": "app-306",
+            "title": "跑路(test)",
             "params": {},
             "hash": ""
         },
