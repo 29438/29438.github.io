@@ -10,7 +10,7 @@
         "wallpaperSlideTime": 1519442460788,
         "wallpaperSlideIndex": 8,
         "openMax": 9,
-        "idCounter": 299,
+        "idCounter": 306,
         "themeColor": "rgba(2,35,64,1)",
         "autoThemeColor": true,
         "wallpapers": [
@@ -1111,7 +1111,7 @@
             "desc": "",
             "icon": {
                 "type": "img",
-                "content": "https://dd-static.jd.com/ddimg/jfs/t1/56653/39/18071/8152/628a2d15E8f5372d4/8f0e90ad8e208ffa.png",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/193207/20/27491/3091/631f2971E0845232f/af59c55d5be07155.png",
                 "bg": ""
             },
             "openMode": "outer",
@@ -1131,8 +1131,8 @@
                 "height": "y*0.8-80",
                 "width": "x*0.8"
             },
-            "title": "低端影视",
-            "url": "https://ddrk.me",
+            "title": "55影视",
+            "url": "https://www.555dy3.com",
             "customTile": "",
             "urlRandomToken": true
         },
@@ -1527,7 +1527,7 @@
                 "height": "y*0.8-80",
                 "width": "x*0.8"
             },
-            "title": "影视大全(移动端)",
+            "title": "影视大全(自营)",
             "url": "/tv",
             "customTile": "",
             "urlRandomToken": true
@@ -2130,7 +2130,7 @@
             "addressBar": false,
             "autoRun": 0,
             "background": false,
-            "badge": 1,
+            "badge": 0,
             "desc": "",
             "icon": {
                 "type": "img",
@@ -2158,6 +2158,171 @@
             "url": "/page/sj",
             "customTile": "https://dd-static.jd.com/ddimg/jfs/t1/166604/27/29614/42285/6300d08aE046ef595/19cca88851bd4c17.png",
             "urlRandomToken": false
+        },
+        "app-299": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/85972/18/29492/7368/631f28bdEfd8c5b7f/fada487133fd245b.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "厂长资源",
+            "url": "https://www.czspp.com/",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-301": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/33683/9/16452/10560/631f2b4cEf9b668e9/26727f55aa43f59e.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "鸭奈飞影视",
+            "url": "https://yanetflix.com/",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-302": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/132586/25/29174/10356/631f2cb2Ef4050bbb/d2c59d5e0816ee68.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "低端影视",
+            "url": "https://ddys.tv/",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-303": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/163818/14/30173/12277/631f2dbbEf17b45d1/b477053f2b9e7bb4.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "哔嘀影视",
+            "url": "https://www.bdys01.com/",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-304": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/67258/36/21431/8512/631f2f4dE45b93b79/ff04cf0cb3743efb.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "在线之家",
+            "url": "https://zxzj.vip/",
+            "customTile": "",
+            "urlRandomToken": true
         }
     },
     "shortcuts": [
@@ -2191,12 +2356,6 @@
                 {
                     "app": "ylui-apps-calculator",
                     "title": "科学计算器",
-                    "params": {},
-                    "hash": ""
-                },
-                {
-                    "app": "app-292",
-                    "title": "西瓜视频",
                     "params": {},
                     "hash": ""
                 }
@@ -2267,20 +2426,8 @@
             "hash": ""
         },
         {
-            "app": "app-170",
-            "title": "英雄联盟",
-            "params": {},
-            "hash": ""
-        },
-        {
             "app": "404",
             "title": "404",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-198",
-            "title": "学习通",
             "params": {},
             "hash": ""
         },
@@ -2333,14 +2480,20 @@
             "hash": ""
         },
         {
-            "app": "app-201",
-            "title": "打飞机",
+            "app": "app-170",
+            "title": "英雄联盟",
             "params": {},
             "hash": ""
         },
         {
             "app": "app-195",
             "title": "小霸王游戏",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-201",
+            "title": "打飞机",
             "params": {},
             "hash": ""
         },
@@ -2357,16 +2510,69 @@
             "hash": ""
         },
         {
-            "app": "app-214",
-            "title": "免费追剧",
+            "app": "app-198",
+            "title": "学习通",
             "params": {},
             "hash": ""
         },
         {
             "app": "app-271",
-            "title": "今日校园",
+            "title": "今日校园自动签到",
             "params": {},
             "hash": ""
+        },
+        {
+            "app": "app-275",
+            "title": "职教云自动签到",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "title": "免费观影",
+            "children": [
+                {
+                    "app": "app-299",
+                    "title": "厂长资源",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "app": "app-302",
+                    "title": "低端影视",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "app": "app-301",
+                    "title": "鸭奈飞影视",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "app": "app-214",
+                    "title": "55影视",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "app": "app-303",
+                    "title": "哔嘀影视",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "app": "app-304",
+                    "title": "在线之家",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "app": "app-263",
+                    "title": "自营影视大全",
+                    "params": {},
+                    "hash": ""
+                }
+            ]
         },
         {
             "app": "app-175",
@@ -2387,14 +2593,8 @@
             "hash": ""
         },
         {
-            "app": "app-218",
-            "title": "Ext",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-216",
-            "title": "主页",
+            "app": "app-253",
+            "title": "小游戏",
             "params": {},
             "hash": ""
         },
@@ -2405,32 +2605,20 @@
             "hash": ""
         },
         {
-            "app": "app-253",
-            "title": "小游戏",
-            "params": {},
-            "hash": ""
-        },
-        {
             "app": "app-243",
             "title": "小姐姐视频",
             "params": {},
             "hash": ""
         },
         {
-            "app": "app-263",
-            "title": "影视大全(移动端)",
+            "app": "app-298",
+            "title": "随机小姐姐",
             "params": {},
             "hash": ""
         },
         {
             "app": "app-272",
             "title": "Creo8.0破解版",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-275",
-            "title": "职教云自动签到",
             "params": {},
             "hash": ""
         },
@@ -2447,8 +2635,26 @@
             "hash": ""
         },
         {
+            "app": "app-218",
+            "title": "Extension",
+            "params": {},
+            "hash": ""
+        },
+        {
             "app": "app-244",
             "title": "短视频去水印",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-216",
+            "title": "主页",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-297",
+            "title": "帮你百度",
             "params": {},
             "hash": ""
         },
@@ -2473,18 +2679,6 @@
         {
             "app": "app-291",
             "title": "QQ在线状态",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-297",
-            "title": "帮你百度",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-298",
-            "title": "随机小姐姐",
             "params": {},
             "hash": ""
         }
@@ -2578,17 +2772,6 @@
                     "app": "app-289",
                     "title": "烟花✨",
                     "i": "290",
-                    "params": {},
-                    "hash": ""
-                },
-                {
-                    "x": 0,
-                    "y": 13,
-                    "w": 2,
-                    "h": 2,
-                    "app": "app-292",
-                    "title": "西瓜视频",
-                    "i": "295",
                     "params": {},
                     "hash": ""
                 }
@@ -2807,12 +2990,6 @@
                 "params": {},
                 "hash": ""
             },
-            "itemPushed-262": {
-                "app": "app-260",
-                "title": "LspTV",
-                "params": {},
-                "hash": ""
-            },
             "itemPushed-264": {
                 "app": "app-263",
                 "title": "影视大全(移动端)",
@@ -2834,12 +3011,6 @@
             "itemPushed-287": {
                 "app": "app-286",
                 "title": "影视大全",
-                "params": {},
-                "hash": ""
-            },
-            "itemPushed-293": {
-                "app": "app-292",
-                "title": "西瓜视频",
                 "params": {},
                 "hash": ""
             }
