@@ -2,21 +2,18 @@
     "configs": {
         "topTaskBar": false,
         "sound": false,
-        "wallpaper": "https://cdn.u1.huluxia.com/g3/M01/83/52/wKgBOV30s5OADe22AAEKfur53l8648.jpg",
+        "wallpaper": "./res/img/wallpapers/bg12.jpg",
         "wallpaperBlur": false,
-        "wallpaperSlide": false,
+        "wallpaperSlide": true,
         "wallpaperSlideRandom": true,
         "wallpaperSlideItv": 1,
-        "wallpaperSlideTime": 1519442460788,
-        "wallpaperSlideIndex": 8,
+        "wallpaperSlideTime": 1663160863702,
+        "wallpaperSlideIndex": 5,
         "openMax": 9,
-        "idCounter": 307,
-        "themeColor": "rgba(2,35,64,1)",
+        "idCounter": 311,
+        "themeColor": "rgba(130,124,121,1)",
         "autoThemeColor": true,
         "wallpapers": [
-            {
-                "image": "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="
-            },
             {
                 "image": "https://cdn.u1.huluxia.com/g3/M01/83/52/wKgBOV30s5OADe22AAEKfur53l8648.jpg",
                 "preview": "./res/img/wallpapers/bg1_1.jpg"
@@ -36,10 +33,6 @@
             {
                 "image": "./res/img/wallpapers/bg5.jpg",
                 "preview": "./res/img/wallpapers/bg5_1.jpg"
-            },
-            {
-                "image": "./res/img/wallpapers/bg6.jpg",
-                "preview": "./res/img/wallpapers/bg6_1.jpg"
             },
             {
                 "image": "./res/img/wallpapers/bg7.jpg",
@@ -70,8 +63,28 @@
                 "preview": "./res/img/wallpapers/bg13_1.jpg"
             },
             {
-                "image": "./res/img/wallpapers/bg14.jpg",
-                "preview": "./res/img/wallpapers/bg14_1.jpg"
+                "image": "https://tva1.sinaimg.cn/large/ad350cbbly1h66erepy2vj21z4140u0y.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://tva1.sinaimg.cn/large/ad350cbbly1h66erggbovj22yo1o0x6p.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://tva1.sinaimg.cn/large/ad350cbbly1h66erky3k4j215o0ngt8y.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://tva1.sinaimg.cn/large/ad350cbbly1h66erxvgwwj21hc0xcmyp.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://tva1.sinaimg.cn/large/ad350cbbly1h66erxuwkej21ux0u0afu.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://tva1.sinaimg.cn/large/ad350cbbly1h66erxt0h5j21ud0u00tw.jpg",
+                "preview": ""
             }
         ],
         "pathRes": "./res",
@@ -447,7 +460,7 @@
             "addressBar": false,
             "autoRun": 0,
             "background": false,
-            "badge": 0,
+            "badge": 1,
             "desc": "全网音乐",
             "icon": {
                 "type": "img",
@@ -1527,7 +1540,7 @@
                 "height": "y*0.8-80",
                 "width": "x*0.8"
             },
-            "title": "影视大全(自营)",
+            "title": "影视大全",
             "url": "/tv",
             "customTile": "",
             "urlRandomToken": true
@@ -1792,7 +1805,7 @@
                 "width": "x*0.8"
             },
             "title": "职教云自动签到",
-            "url": "http://ali.5luck.cn:99/page/zjy",
+            "url": "/page/zjy",
             "customTile": "",
             "urlRandomToken": true
         },
@@ -2356,6 +2369,138 @@
             "url": "/page/paolu",
             "customTile": "/page/paolu",
             "urlRandomToken": true
+        },
+        "app-307": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/67713/24/22223/8475/631f3af3E0d7a2e77/aa7ecef52c680aa8.png",
+                "bg": ""
+            },
+            "openMode": "max",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "安全认证",
+            "url": "/page/safe",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-308": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/73655/29/22218/8656/631f3d87Ecdfae74b/f3c283a10549c360.png",
+                "bg": ""
+            },
+            "openMode": "max",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "在线编辑器",
+            "url": "/page/code",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-309": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/177518/15/29055/4031/631f3e7bE47baf395/253215a5e7e68a94.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "Face",
+            "url": "/page/face",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-310": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/199418/26/27930/2390/631f40e7Ec680b4ec/1e0dd44ad3a2d16e.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "在线直播",
+            "url": "/page/live",
+            "customTile": "",
+            "urlRandomToken": true
         }
     },
     "shortcuts": [
@@ -2473,6 +2618,12 @@
         {
             "app": "app-176",
             "title": "微信",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-308",
+            "title": "在线编辑器",
             "params": {},
             "hash": ""
         },
@@ -2637,11 +2788,17 @@
                 },
                 {
                     "app": "app-263",
-                    "title": "自营影视大全",
+                    "title": "影视大全",
                     "params": {},
                     "hash": ""
                 }
             ]
+        },
+        {
+            "app": "app-310",
+            "title": "在线直播",
+            "params": {},
+            "hash": ""
         },
         {
             "app": "app-175",
@@ -2668,6 +2825,12 @@
             "hash": ""
         },
         {
+            "app": "app-307",
+            "title": "安全认证",
+            "params": {},
+            "hash": ""
+        },
+        {
             "app": "app-244",
             "title": "短视频去水印",
             "params": {},
@@ -2680,20 +2843,8 @@
             "hash": ""
         },
         {
-            "app": "app-216",
-            "title": "主页",
-            "params": {},
-            "hash": ""
-        },
-        {
             "app": "app-297",
             "title": "帮你百度",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-306",
-            "title": "跑路(test)",
             "params": {},
             "hash": ""
         },
@@ -2712,6 +2863,24 @@
         {
             "app": "app-291",
             "title": "QQ在线状态",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-306",
+            "title": "跑路(test)",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-216",
+            "title": "主页",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-309",
+            "title": "Face",
             "params": {},
             "hash": ""
         }
