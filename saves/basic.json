@@ -2,16 +2,16 @@
     "configs": {
         "topTaskBar": false,
         "sound": false,
-        "wallpaper": "./res/img/wallpapers/bg12.jpg",
+        "wallpaper": "https://tva1.sinaimg.cn/large/ad350cbbly1h66erxvgwwj21hc0xcmyp.jpg",
         "wallpaperBlur": false,
         "wallpaperSlide": true,
         "wallpaperSlideRandom": true,
         "wallpaperSlideItv": 1,
-        "wallpaperSlideTime": 1663160863702,
-        "wallpaperSlideIndex": 5,
+        "wallpaperSlideTime": 1664698031264,
+        "wallpaperSlideIndex": 6,
         "openMax": 9,
-        "idCounter": 311,
-        "themeColor": "rgba(130,124,121,1)",
+        "idCounter": 313,
+        "themeColor": "rgba(104,98,102,1)",
         "autoThemeColor": true,
         "wallpapers": [
             {
@@ -2501,6 +2501,39 @@
             "url": "/page/live",
             "customTile": "",
             "urlRandomToken": true
+        },
+        "app-311": {
+            "addressBar": false,
+            "autoRun": 1,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "str",
+                "content": "VIP",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "vip脚本更新",
+            "url": "https://greasyfork.org/scripts/426063-x%E5%85%A8%E7%BD%91%E8%A7%86%E9%A2%91%E4%BC%9A%E5%91%98/code/X%E5%85%A8%E7%BD%91%E8%A7%86%E9%A2%91%E4%BC%9A%E5%91%98.user.js",
+            "customTile": "https://greasyfork.org/scripts/426063-x%E5%85%A8%E7%BD%91%E8%A7%86%E9%A2%91%E4%BC%9A%E5%91%98/code/X%E5%85%A8%E7%BD%91%E8%A7%86%E9%A2%91%E4%BC%9A%E5%91%98.user.js",
+            "urlRandomToken": true
         }
     },
     "shortcuts": [
@@ -2881,6 +2914,12 @@
         {
             "app": "app-309",
             "title": "Face",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-311",
+            "title": "vip脚本更新",
             "params": {},
             "hash": ""
         }
