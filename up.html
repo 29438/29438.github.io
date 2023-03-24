@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>UpLoad(runoob.com)</title>
+</head>
+<style>
+.container {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+img { 
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+}
+</style>
+<body  style="background-image: linear-gradient(135deg, #e3a1ff, #ffd0a0, #6ef3ff);">
+
+<div class="container">
+  <div class="center">
+<form action="upload.php" method="post" enctype="multipart/form-data">
+	<label for="file">文件名：</label>
+	<input type="file" name="file" id="file"><br>
+	<input type="submit" name="submit" value="提交">
+</form>
+  </div>
+</div>
+</body>
+</html>

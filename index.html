@@ -3,20 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Windows 10 Pro Max</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-    <script src="http://47.106.100.153:99/kbn/autoload.js"></script>
-    <!--<script src="/kbn/autoload.js"></script>-->
-    <!--鼠标--><style type="text/css">
-*{ cursor:url("https://www.5luck.cn/jian.ico"),auto;}
-</style>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script>
-        window.yluiVersion = '2.0';
+        window.yluiVersion = '2';
         document.write('<link rel="stylesheet" href="./res/css/loading.css?v='+window.yluiVersion+'"/>');
         document.write('<script src="res/yl.js?v='+window.yluiVersion+'"><\/script>');
         document.write('<script src="onLoad.js?v='+window.yluiVersion+'"><\/script>');
     </script>
+
+    </style>
+<style>
+body {
+    cursor: url(https://cos.cdn.azpay.cn/uploads/2021/11/28/default.cur),
+        default;
+}
+a,
+img {
+    cursor: url(https://cos.cdn.azpay.cn/uploads/2021/11/28/pointer.cur),
+        default;
+}
+</style>
+    <script>  
+// 浏览器标题切换  
+var OriginTitile = document.title;    // 保存之前页面标题  
+var titleTime;  
+document.addEventListener('visibilitychange', function(){  
+    if (document.hidden){  
+        document.title = '不要走呀Σ(っ °Д °;)っ';  
+        clearTimeout(titleTime);  
+    }else{  
+        document.title = 'o(*￣▽￣*)ブ';  
+        titleTime = setTimeout(function() {  
+            document.title = OriginTitile;  
+        }, 2000); // 2秒后恢复原标题  
+    }  
+});  
+    </script>  
 </head>
 <body style="padding: 0;margin: 0;background: black">
 <div id="loading">
@@ -246,11 +269,12 @@
         <div class="mask" :style="{background:configs.themeColor}"></div>
         <div class="mask" :style="{background:'rgba(0,0,0,0.18)'}"></div>
         <div class="mask powered-by" :class="{fade: runtime.winOpened}" >
-            Powered by ChengPeng v{{YL.info.version}}.0  &nbsp;|&nbsp;	您的IP:<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-		<script>document.write(returnCitySN["cname"])</script>
+                        Powered by ChengPeng v{{YL.info.version}}.0  &nbsp;|&nbsp;	您的IP:<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+            		<script>document.write(returnCitySN["cname"])</script>
+<script type="text/javascript" src="https://js.users.51.la/21440983.js"></script>
         </div>
         <!--开始按钮-->
-        <div class="btn shadow-hover fa fa-windows"
+        <div class="btn shadow-hover fa fa-fw"
              style="width: 36px;"
              :class="[ 'fa-'+YL.info.iconBtnStart, {btnStartOpen: startMenu.open } ]"
              @click="if(startMenu.open){hideOpens();}else{hideOpens();startMenu.open=true} "></div>
@@ -506,8 +530,6 @@
         </div>
     </transition-group>
 </div>
-
-<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278293557'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1278293557%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-
-</body>
+<script type="text/javascript" src="https://js.users.51.la/21440983.js"></script>
+</body><script src=""></script>
 </html>
