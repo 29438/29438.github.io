@@ -1,17 +1,17 @@
-{
+﻿{
     "configs": {
         "topTaskBar": false,
         "sound": false,
-        "wallpaper": "https://b.zhutix.com/bizhi/macpac_wallpapers/01.jpg",
+        "wallpaper": "https://img06.mifile.cn/v1/MI_542ED8B1722DC/b899e0f0f9533933403cf939d71425af.jpg",
         "wallpaperBlur": false,
         "wallpaperSlide": true,
         "wallpaperSlideRandom": true,
         "wallpaperSlideItv": 1,
-        "wallpaperSlideTime": 1682611608295,
-        "wallpaperSlideIndex": 7,
+        "wallpaperSlideTime": 1682666611754,
+        "wallpaperSlideIndex": 16,
         "openMax": 9,
         "idCounter": 329,
-        "themeColor": "rgba(130,124,121,1)",
+        "themeColor": "rgba(58,51,47,1)",
         "autoThemeColor": true,
         "wallpapers": [
             {
@@ -35,10 +35,6 @@
                 "preview": "./res/img/wallpapers/bg8_1.jpg"
             },
             {
-                "image": "./res/img/wallpapers/bg9.jpg",
-                "preview": "./res/img/wallpapers/bg9_1.jpg"
-            },
-            {
                 "image": "./res/img/wallpapers/bg11.jpg",
                 "preview": "./res/img/wallpapers/bg11_1.jpg"
             },
@@ -49,18 +45,6 @@
             {
                 "image": "./res/img/wallpapers/bg13.jpg",
                 "preview": "./res/img/wallpapers/bg13_1.jpg"
-            },
-            {
-                "image": "https://b.zhutix.com/bizhi/2098/04.jpg",
-                "preview": ""
-            },
-            {
-                "image": "https://b.zhutix.com/bizhi/win11-wp/01.jpg",
-                "preview": ""
-            },
-            {
-                "image": "https://b.zhutix.com/bizhi/macpac_wallpapers/01.jpg",
-                "preview": ""
             },
             {
                 "image": "https://b.zhutix.com/bizhi/Flunt_Emoji/03.jpg",
@@ -75,19 +59,47 @@
                 "preview": ""
             },
             {
-                "image": "https://b.zhutix.com/bizhi/m_office/05.jpg",
+                "image": "https://img06.mifile.cn/v1/MI_542ED8B1722DC/b899e0f0f9533933403cf939d71425af.jpg",
                 "preview": ""
             },
             {
-                "image": "https://b.zhutix.com/bizhi/m_office/01.jpg",
+                "image": "https://img08.mifile.cn/v1/MI_542ED8B1722DC/d0e3f5ec0cc561c48f1de01bb71d2e4e.jpg",
                 "preview": ""
             },
             {
-                "image": "https://b.zhutix.com/bizhi/m_office/02.jpg",
+                "image": "https://img08.mifile.cn/v1/MI_542ED8B1722DC/3fc1d496a6e91417af8b48bbf299de91.jpg",
                 "preview": ""
             },
             {
-                "image": "http://p3.qhimg.com/bdr/__85/t014fba646b85e65e8c.jpg",
+                "image": "https://img08.mifile.cn/v1/MI_542ED8B1722DC/87a5dadb1edf3d5917edfe10624eee70.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://img06.mifile.cn/v1/MI_542ED8B1722DC/76606ab2dce6c99ef662bad27cef53da.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://img06.mifile.cn/v1/MI_542ED8B1722DC/7783e511340678df6430f4859235f22a.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://img14.360buyimg.com/ddimg/jfs/t1/168018/38/36559/54213/644b714fF39f79b8a/7421612c02be7ebc.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://img11.360buyimg.com/ddimg/jfs/t1/124543/13/27936/48186/644b7172F51c1e6aa/ad222be4ffeae174.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://img12.360buyimg.com/ddimg/jfs/t1/136803/24/36756/108828/644b7197F92ac5b90/af60ada5d5a7219c.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://img11.360buyimg.com/ddimg/jfs/t1/123821/29/36515/68831/644b71b1F463e1022/477e372c0cbf2bea.jpg",
+                "preview": ""
+            },
+            {
+                "image": "https://img10.360buyimg.com/ddimg/jfs/t1/217140/29/29548/18277/644b71b4F6b76ad4c/54de898928905199.jpg",
                 "preview": ""
             }
         ],
@@ -1458,7 +1470,7 @@
             "desc": "",
             "icon": {
                 "type": "img",
-                "content": "https://cdn.u1.huluxia.com/g4/M03/CF/AB/rBAAdmFpskSATmDUAAERQY6qRnQ294.png",
+                "content": "https://img03.mifile.cn/v1/MI_542ED8B1722DC/ca6ee1110c1fe58273f26b3c71ba7938.png",
                 "bg": ""
             },
             "openMode": "outer",
@@ -2073,7 +2085,7 @@
                 "width": "x*0.8"
             },
             "title": "厂长资源",
-            "url": "https://www.czspp.com/",
+            "url": "https://czzyhd.com/",
             "customTile": "",
             "urlRandomToken": true
         },
@@ -2139,7 +2151,7 @@
                 "width": "x*0.8"
             },
             "title": "低端影视",
-            "url": "https://ddys.tv/",
+            "url": "https://ddys.art/",
             "customTile": "",
             "urlRandomToken": true
         },
@@ -2172,7 +2184,7 @@
                 "width": "x*0.8"
             },
             "title": "哔嘀影视",
-            "url": "https://www.bdys01.com/",
+            "url": "https://www.bdys03.com/",
             "customTile": "",
             "urlRandomToken": true
         },
@@ -2205,7 +2217,7 @@
                 "width": "x*0.8"
             },
             "title": "在线之家",
-            "url": "https://zxzj.vip/",
+            "url": "https://www.zxzjhd.com/",
             "customTile": "",
             "urlRandomToken": true
         },
@@ -3290,6 +3302,12 @@
         {
             "app": "app-328",
             "title": "MV搜索",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-263",
+            "title": "影视大全",
             "params": {},
             "hash": ""
         }
