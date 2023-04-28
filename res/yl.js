@@ -1,11 +1,11 @@
 window.YL = {
   info: {
-    softwareName: '程鹏',
-    version: 2.0 ,
+    softwareName: 'WinUI',
+    version: window.yluiVersion,
     iconBtnStart: 'windows',
     author: '程鹏',
     contactInformation: 'cp66666@vip.qq.com',
-    officialWebsite: 'www.5luck.cn',
+    officialWebsite: 'https://cpddd.tk',
     copyrightDetail: '禁止任何未经作者授权的使用、修改、二次发布，包括从本产品中剥离独立使用等侵权行为，违者将追究法律责任。',
     otherStatements: '',
   },
@@ -20,7 +20,7 @@ window.YL = {
       // YL:YL,
       configs: {
         topTaskBar: true, //顶部任务栏？默认底部
-        sound: false,//开启声音
+        sound: true,//开启声音
         wallpaper: './res/img/wallpapers/bg1.jpg',
         wallpaperBlur: false, //壁纸模糊（影响性能）
         wallpaperSlide: false, //壁纸幻灯片
@@ -28,7 +28,7 @@ window.YL = {
         wallpaperSlideItv: 0.1, //壁纸幻灯片播放切换间隔（单位：分钟）
         wallpaperSlideTime: Date.now(), //记录最近一次切换壁纸的时刻
         wallpaperSlideIndex: 0, //记录最近一次切换壁纸的index
-        openMax: 20,//最多开启N个app
+        openMax: 9,//最多开启N个app
         idCounter: 0,//ID的下标起始
         themeColor: "black",
         autoThemeColor: true,

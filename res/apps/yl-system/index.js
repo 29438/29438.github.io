@@ -74,8 +74,8 @@ YLApp.onReady(function () {
                     disable:!(YL.static.changeable&&YL.static.dataCenter)
                 },
                 "YLUI": {
-                    icon: "yoast",
-                    text: '版权',
+                    icon: "windows",
+                    text: 'WinUI',
                 },
                 "aboutUs": {
                     icon: "info-circle",
@@ -305,7 +305,7 @@ YLApp.onReady(function () {
             },
             jsonExport: function () {
                 var blob = new Blob([this.textData], {type: "text/plain;charset=utf-8"});
-                Yuri2.saveAs(blob, "yl-data.json");
+                Yuri2.saveAs(blob, "basic.json");
             },
             refreshData: function () {
                 //读取data

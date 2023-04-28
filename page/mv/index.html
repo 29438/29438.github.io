@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>酷狗MV搜索</title>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+  <style>
+  /* 缩放动画 */
+@keyframes scale {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 渐变色边框 */
+.player-container {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 10px;
+  border-image-source: linear-gradient(45deg, #f4a7b9, #ff9d6c);
+}
+
+/* 点击效果 */
+.player-container:hover {
+  transform: scale(1.1);
+}
+  
+  .video-info {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+}
+
+.video-info .video-item {
+  margin-bottom: 10px;
+}
+
+.video-info .video-label {
+  display: inline-block;
+  width: 60px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.video-info .video-name,
+.video-info .video-singer,
+.video-info .video-duration {
+  margin-left: 10px;
+}
+  
+    .mdui-row {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .mdui-textfield-input.search-input {
+  border: none;
+  background-image: linear-gradient(to bottom, #ccc 0%, #ccc 100%);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15), 0 0 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+    .mdui-btn.search-btn {
+  border: none;
+  background-image: linear-gradient(to bottom, #4c8dff 0%, #4c8dff 100%);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15), 0 0 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+
+    .search-hint {
+      color: #7f7f7f;
+    }
+
+    .mdui-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    .mdui-list-item {
+      width: calc(50% - 20px);
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: 576px) {
+      .mdui-list-item {
+        width: calc(33.3333% - 20px);
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      .mdui-list-item {
+        width: calc(25% - 20px);
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .mdui-list-item {
+        width: calc(20% - 20px);
+      }
+    }
+
+    .mdui-textfield-input:focus {
+      border-color: #09f;
+      box-shadow: 0 0 10px rgba(0,153,255,.2);
+    }
+    .mdui-list-item {
+      width: calc(50% - 20px);
+      margin: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+    .mdui-list-item:before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+      /* 16:9 的视频宽高比 */
+    }
+    .mdui-list-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s;
+    }
+    .mdui-list-item:hover img {
+      transform: scale(1.1);
+    }
+    .mdui-list-item-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, .6);
+      color: #fff;
+    }
+    .mdui-list-item-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .mdui-list-item-text {
+      font-size: 14px;
+    }
+
+    .mdui-video-fluid {
+      padding-bottom: 56.25%;
+    }
+
+    #video-dialog .mdui-dialog-content {
+      padding: 0;
+    }
+
+    #video-dialog video {
+      width: 100%;
+      height: 100%;
+    }
+    .mdui-video-dialog {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.8); /* 设置背景颜色为半透明的白色 */
+  border-radius: 12px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15), 0 0 32px rgba(0, 0, 0, 0.1); /* 增加阴影效果 */
+  backdrop-filter: blur(10px); /* 设置玻璃效果 */
+}
+  </style>
+</head>
+
+<body>
+    <!-- MV播放弹窗 -->
+  <div class="mdui-dialog mdui-video-dialog" id="video-dialog">
+  <div class="mdui-dialog-title">MV播放器</div>
+  <div class="mdui-dialog-content">
+    <video class="mdui-list-item:before mdui-center" controls autoplay></video>
+    <div class="video-info">
+      <div class="video-item"><span class="video-label">歌名：</span><span class="video-name"></span></div>
+      <div class="video-item"><span class="video-label">歌手：</span><span class="video-singer"></span></div>
+      <div class="video-item"><span class="video-label">时长：</span><span class="video-duration"></span></div>
+    </div>
+  </div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-color-red mdui-dialog-close" mdui-dialog-close onclick="$('#video-dialog video').get(0).pause()">关闭</button>
+  </div>
+</div>
+
+  <div class="mdui-container-fluid mdui-m-t-3">
+    <div class="mdui-row">
+      <div class="mdui-col-xs-9">
+        <div class="mdui-textfield">
+          <input class="mdui-textfield-input search-input" type="text" placeholder="请输入要搜索的MV名称">
+          <div class="mdui-textfield-helper search-hint">支持汉字、拼音和首字母搜索</div>
+        </div>
+      </div>
+      <div class="mdui-col-xs-3">
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue mdui-float-right search-btn">搜索</button>
+      </div>
+    <div class="mdui-row">
+      <div class="mdui-col-xs-12">
+        <ul class="mdui-list">
+          <!-- 搜索结果将在这里动态添加 -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 搜索结果为空时的提示信息 -->
+  <div class="mdui-container">
+    <div class="mdui-row" id="no-result" style="display:none;">
+      <div class="mdui-col-xs-12">
+        <div class="mdui-alert mdui-color-yellow">
+          <i class="mdui-icon material-icons mdui-icon-left">info_outline</i>
+          没有匹配的MV结果，请重新搜索。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(function () {
+  // 点击搜索按钮，触发 AJAX 请求，获取MV搜索结果
+  $('.search-btn').click(function () {
+    var keyword = $('.search-input').val();
+    $.ajax({
+      url: 'mv_search.php',
+      type: 'GET',
+      data: { keyword: keyword },
+      dataType: 'JSON',
+      success: function (response) {
+        if (response.code == 1) {
+          $('#no-result').hide(); // 隐藏提示信息
+          var list = response.data;
+          var html = '';
+          for (var i = 0; i < list.length; i++) {
+            var item = list[i];
+            html += '<li class="mdui-list-item"><div class="mdui-list-item-content">'
+              + '<div class="mdui-list-item-title mdui-text-truncate">' + item.name + '</div>'
+              + '<div class="mdui-list-item-text mdui-text-truncate">' + item.singer + '</div>'
+              // 播放按钮，绑定 click 事件打开播放弹窗
+              + '<button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue mdui-float-right mdui-video-open-dialog" data-src="' + item.url + '" data-name="' + item.name + '" data-singer="' + item.singer + '">播放</button>'
+              + '</div></li>';
+          }
+          $('.mdui-list').html(html);
+
+          // 弹出框的初始化代码
+          var dialog = new mdui.Dialog('#video-dialog', {
+            history: false,
+            modal: true,
+            closeOnEsc: true
+          });
+
+          // 绑定播放按钮的 click 事件，以打开播放弹窗
+          $('.mdui-video-open-dialog').on('click', function () {
+            var src = $(this).data('src');
+            var name = $(this).data('name');
+            var singer = $(this).data('singer');
+            var video = $('#video-dialog video');
+            var info = $('#video-dialog .video-info');
+            video.attr('src', src);
+            info.find('.video-name').text(name);
+            info.find('.video-singer').text(singer);
+            // 获取视频时长等信息，并添加到介绍区域中
+            video.on('loadedmetadata', function() {
+              info.find('.video-duration').text(formatTime(video.get(0).duration));
+            });
+            dialog.open();
+          });
+
+          // 当弹窗关闭时停止视频播放
+          dialog.$element.on('close.mdui.dialog', function () {
+            var video = $('#video-dialog video');
+            video.get(0).pause();
+            video.attr('src', '');
+            var info = $('#video-dialog .video-info');
+            info.find('.video-name, .video-singer, .video-duration').text('');
+          });
+
+          // 将秒转换成 mm:ss 格式
+          function formatTime(time) {
+            var minutes = Math.floor(time / 60);
+            var seconds = Math.floor(time % 60);
+            return minutes + ':' + (seconds < 10 ? '0' + seconds : seconds);
+          }
+        } else {
+          $('.mdui-list').html('');
+          $('#no-result').show(); // 显示搜索结果为空时的提示信息
+        }
+      },
+      error: function () {
+        mdui.snackbar({
+          message: '请求失败，请稍后再试',
+          position: 'bottom'
+        });
+      }
+    });
+  });
+});
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</body>
+</html>

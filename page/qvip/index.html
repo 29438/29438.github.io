@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QQ</title>
+    <meta name="keywords" content="权益多合一" />
+    <meta name="description" content="权益多合一" />
+    <link href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css" rel="stylesheet" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/layui/2.6.8/layui.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.3.0/layer.js"></script>
+    <link rel="icon"
+        href="https://tse1-mm.cn.bing.net/th/id/OIP-C.FpoCAsORxnx5oNKw3nr_agHaH6?w=158&h=180&c=7&r=0&o=5&pid=1.7"
+        type="image/ico">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        th {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .bg {
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        #imghy {
+            transition: all 2.0s;
+        }
+
+        #imgkj {
+            transition: all 2.0s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 center-block" style="float: none;">
+            <div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <button type="button" id="hyxl" class="btn btn-primary form-control">会员系列</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" id="kjxl" class="btn btn-primary form-control">空间系列</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 会员系列 -->
+            <div class="panel panel-primary" id="hy">
+                <div class="panel-heading" style="text-align: center;">
+                    <h3 class="panel-title">
+                        会员权益领取
+                    </h3>
+                </div>
+                <div class="panel-body" style="text-align: center;">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.FpoCAsORxnx5oNKw3nr_agHaH6?w=158&h=180&c=7&r=0&o=5&pid=1.7"
+                                width="120px" title="二维码" id="imghy">
+                            <div style="margin-top:5px;color: red;" id="wbhy"></div>
+                        </div>
+                        <button type="button" onclick="tzdl()" class="btn btn-warning btn-block">点击跳转登录（无需扫码）</button>
+                    </div>
+                    <!-- CF图标 -->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">CF图标</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <button type="button" onclick="cftb(1)" class="btn btn-primary btn-block">开启CF图标</button>
+                            <button type="button" onclick="cftb(0)" class="btn btn-primary btn-block">关闭CF图标</button>
+                        </div>
+                    </div>
+                    <!-- 三天豪华绿钻 -->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">三天豪华绿钻</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <button type="button" onclick="qqlz()"
+                                class="btn btn-primary btn-block">一键领取(一号一月一次)</button>
+                        </div>
+                    </div>
+                    <!-- QQ在线系列 -->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">修改企鹅在线(无会员限制)</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <button type="button" onclick="qezx()" class="btn btn-primary btn-block">点击开始修改</button>
+                        </div>
+                    </div>
+                    <!-- 查业务 -->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">查企鹅业务</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <button type="button" onclick="cyw()" class="btn btn-primary btn-block">点击开始查询</button>
+                        </div>
+                    </div>
+                    <!-- 查业务 -->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">听歌时长</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <button type="button" onclick="tgsc()" class="btn btn-primary btn-block">企鹅音乐一键听歌</button>
+                        </div>
+                    </div>
+                    <!-- 0-60天超级会员 -->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">随机0-60天会员(2.28结束)</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <button type="button" onclick="svip(1)" class="btn btn-primary btn-block">查询可领取次数</button>
+                            <button type="button" onclick="svip(2)" class="btn btn-primary btn-block">查询可领取红包</button>
+                            <button type="button" onclick="svip(3)" class="btn btn-primary btn-block">查询已领取会员</button>
+                            <button type="button" onclick="svip(4)" class="btn btn-primary btn-block">一键兑换SVIP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--空间系列-->
+            <div class="panel panel-primary" id="kj" style="display:none">
+                <div class="panel-heading" style="text-align: center;">
+                    <h3 class="panel-title">
+                        空间权益领取
+                    </h3>
+                </div>
+                <div class="panel-body" style="text-align: center;">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.FpoCAsORxnx5oNKw3nr_agHaH6?w=158&h=180&c=7&r=0&o=5&pid=1.7"
+                                width="120px" title="二维码" id="imgkj">
+                            <div style="margin-top:5px;color: red;" id="wbkj"></div>
+                        </div>
+                    </div>
+                    <!--企鹅加速包-->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">企鹅等级加速包</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <button type="button" onclick="qejsb(1)"
+                                class="btn btn-primary btn-block">等级加速包(渠道1)</button>
+                            <button type="button" onclick="qejsb(2)"
+                                class="btn btn-primary btn-block">等级加速包(渠道2)</button>
+                        </div>
+                    </div>
+                    <!--黄钻系列-->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">企鹅黄钻业务</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <button type="button" onclick="qehz(1)"
+                                class="btn btn-primary btn-block">三天豪华黄(需自带豪华黄)</button>
+                            <button type="button" onclick="qehz(2)"
+                                class="btn btn-primary btn-block">黄钻加倍卡(需自带黄钻)</button>
+                        </div>
+                    </div>
+                    <!--说说浏览-->
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
+                            <span id="loginmsg">刷空间说说浏览</span>
+                        </div>
+                        <div id="login" class="list-group-item">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">企鹅账号</div>
+                                    <input type="text" id="sszh" placeholder="查说说id的企鹅账号" class="form-control" />
+                                </div>
+                            </div>
+                            <div id="ssbj" style="display:none">
+                                <div class="form-group" >
+                                    <div class="input-group">
+                                        <div class="input-group-addon">空间说说</div>
+                                        <select id="kjss" class="form-control">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">说说ID</div>
+                                        <input type="text" id="ssid" placeholder="" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">说说浏览</div>
+                                        <input type="text" id="ssll" placeholder="" readonly="readonly" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">说说STA</div>
+                                        <input type="text" id="sta" placeholder="" readonly="readonly" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="css()" class="btn btn-primary btn-block">查说说id</button>
+                            <button type="button" onclick="ssll()" id="djks" class="btn btn-primary btn-block">点击开刷</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        layer.alert("手机打开本页面→点击上方企鹅→QQ扫码登录", { title: "温馨提示", icon: 1 })
+
+        document.write("<script type='text/javascript' src='js/index.js?time=" + Math.random() + "'></" + "script" + ">")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Upload | CP°</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+		<link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">
+		<!-- 背景 -->
+		<link rel="stylesheet" href="css/index.css">
+		<!-- 头像 -->
+		<link rel="icon" href="icon.ico">
+	</head>
+	<style type="text/css">
+		.divForm {
+			position: absolute;
+			/*绝对定位*/
+			width: 300px;
+			height: 200px;
+			/*border: 1px solid red;*/
+			text-align: center;
+			/*(让div中的内容居中)*/
+			left: 50%;
+			margin-top: -200px;
+			margin-left: -150px;
+		}
+
+		#file {
+			border: 2px solid rgba(255, 255, 255, 0.20);
+			border-radius: 61px;
+			font-size: 12px;
+			color: #FFFFFF;
+			letter-spacing: 1px;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 20px 25px;
+			display: inline-block;
+
+		}
+
+		.file input {
+			position: absolute;
+			font-size: 100px;
+			right: 0;
+			top: 0;
+			opacity: 0;
+		}
+
+		.file:hover {
+			background: #AADFFD;
+			border-color: #78C3F3;
+			color: #004974;
+			text-decoration: none;
+		}
+
+		button {
+			background: #288cdd;
+			border: none;
+			width: 200px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 18px;
+			color: #fde;
+			border-radius: 20px;
+		}
+
+		// 点击button来点击input:file
+		$('button').eq(0).click(function () {
+				$('#file').click()
+			}
+
+		)
+	</style>
+	<body>
+		<div id="container">
+			<video id="background_video" loop muted></video>
+			<div id="video_cover"></div>
+			<div id="overlay"></div>
+
+			<div id="video_controls">
+				<span id="play">
+					<img src="play.png">
+				</span>
+				<span id="pause">
+					<img src="pause.png">
+				</span>
+			</div>
+			<section id="main_content">
+
+				<div id="rin-headimg"></div>
+				<div class="rin-name">CP°</div>
+				<div class="rin-description">
+					<h2>
+						<script type="text/javascript" src="https://yi.i8o.cc/yyan/?format=js&=utf-8"></script>
+						<script>
+							yyan()
+						</script>
+					</h2>
+				</div>
+				<div class="rin-tr"></div>
+
+
+				<br>
+
+				<center>
+					<font size="4" color="#7FFFD4" face="Helvetica">
+						<div id="neirong"></div>
+					</font>
+				</center>
+				<div id="head">
+					<div id="rin-bg"> </div>
+					<main id="rin-main"></main>
+				</div><br><br>
+
+				<div class="divForm">
+					<form action="/upload.php" method="post" enctype="multipart/form-data">
+						<input type="file" class="" name="file" id="file">
+						<br><br>
+						<button type="submit" class="layui-btn" name="submit"><i class="layui-icon"></i>上传</button><br>
+						<button type="button" class="layui-btn layui-btn-normal" onclick="reset();return false;"><i
+								class="layui-icon"></i> 清空</button>
+					</form>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-body">
+
+					</div>
+				</div>
+			</section>
+			<footer id="rin-footer">
+				<div>©2020-2022 CP. | Made with love by CP. | BG: <a href="https://cdn.jsdelivr.net/gh/29438/img@main/">
+						<img class="badge" src="https://data.jsdelivr.com/v1/package/gh/29438/img/badge"></a>
+				</div>
+			</footer>
+			<script src="bideo.js"></script>
+			<script src="main.js"></script>
+			<script>
+				//按键触发 
+				document.onkeydown = function() {
+					//禁止 ctrl+u
+					if (event.ctrlKey && window.event.keyCode == 85) {
+						return false;
+					}
+					//禁止 F12
+					if (window.event && window.event.keyCode == 123) {
+						event.keyCode = 0;
+						event.returnValue = false;
+					}
+				}
+			</script>
+	</body>
+</html>

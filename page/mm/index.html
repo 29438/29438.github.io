@@ -6,20 +6,56 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="referrer" content="never">
     <meta name="renderer" content="webkit">
+    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>随机小姐姐</title>
+    <title>Random Videos</title>
     <link rel="stylesheet" href="./assets/style.css">
+<style>
+#url {
+    background: #FFF;
+    background: linear-gradient(to bottom, #39e6d9,#290a93);
+    color: #420645;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    padding: 0px 20px;
+    margin: 0px 5px;
+    border-radius: 20px;
+}
+</style>
+    <script>  
+// 浏览器标题切换  
+var OriginTitile = document.title;    // 保存之前页面标题  
+var titleTime;  
+document.addEventListener('visibilitychange', function(){  
+    if (document.hidden){  
+        document.title = '不要走呀Σ(っ °Д °;)っ';  
+        clearTimeout(titleTime);  
+    }else{  
+        document.title = 'o(*￣▽￣*)ブ';  
+        titleTime = setTimeout(function() {  
+            document.title = OriginTitile;  
+        }, 2000); // 2秒后恢复原标题  
+    }  
+});  
+    </script>
 </head>
-<body>
+<body  style="background-image: linear-gradient(135deg, #e3a1ff, #ffd0a0, #6ef3ff);">
     <section id="main">
-        <video id="player" src="video.php" controls="" webkit-playsinline="" playsinline=""></video>
+        <video id="player" src="http://v.nrzj.vip/video.php" controls="" webkit-playsinline="" playsinline=""></video>
     </section>
     <section id="buttons">
+        <button  id="url" onclick="url();"><a href="index2.html">2号线路</a></button>
         <button id="switch">连续: 开</button>
         <button id="next">播放下一个</button>
        <!-- <span id="down"><a href="/page/mm">来自<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
 		 <script>document.write(returnCitySN["cname"])</script>的兄弟注意身体嗷~ </a></span>-->
     </section>
+<script>
+function url(){
+window.location.href="index2.html";
+}
+</script>
     <script>
     (function (window, document) {
         if (top != self) {
@@ -34,7 +70,8 @@
         var auto = true;
         var player = get('player');
         var randomm = function () {
-	    player.src = 'http://v.nrzj.vip/video.php?_t=' + Math.random();	
+            // player.src = 'http://hc.baozi66.top:99/xjj1.php?_t=' + Math.random();
+            player.src = 'http://v.nrzj.vip/video.php?_t=' + Math.random();
             player.play();
         }
         bind(get('next'), 'click', randomm);
