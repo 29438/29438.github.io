@@ -7,11 +7,11 @@
         "wallpaperSlide": true,
         "wallpaperSlideRandom": true,
         "wallpaperSlideItv": 1,
-        "wallpaperSlideTime": 1682666611754,
-        "wallpaperSlideIndex": 16,
+        "wallpaperSlideTime": 1703258102619,
+        "wallpaperSlideIndex": 8,
         "openMax": 9,
-        "idCounter": 329,
-        "themeColor": "rgba(58,51,47,1)",
+        "idCounter": 337,
+        "themeColor": "rgba(71,71,70,1)",
         "autoThemeColor": true,
         "wallpapers": [
             {
@@ -378,10 +378,10 @@
             "autoRun": 0,
             "background": false,
             "badge": 0,
-            "desc": "免费图床聚合平台",
+            "desc": "图床",
             "icon": {
-                "type": "fa",
-                "content": "image",
+                "type": "img",
+                "content": "https://dd-static.jd.com/ddimg/jfs/t1/67356/19/18254/3842/628a2e5dE64bbbf3f/334d9cbf8b0af66e.png",
                 "bg": ""
             },
             "openMode": "max",
@@ -394,14 +394,14 @@
                 "y": "y*0.05"
             },
             "version": "1.0.0",
-            "poweredBy": ".com",
+            "poweredBy": "",
             "resizable": true,
             "single": true,
             "size": {
                 "height": "y*0.8-80",
                 "width": "x*0.8"
             },
-            "title": "imgchr图床",
+            "title": "ImageHub",
             "url": "https://www.imagehub.cc/",
             "customTile": "",
             "urlRandomToken": true
@@ -549,7 +549,7 @@
                 "content": "https://img06.mifile.cn/v1/MI_542ED8B1722DC/6233e6c73ce947cd6c1dee5f6350d4fc.png",
                 "bg": ""
             },
-            "openMode": "normal",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -582,7 +582,7 @@
                 "content": "https://cdn.u1.huluxia.com/g3/M01/80/41/wKgBOV3zHxyAF23KAAAxAUlJV6Q117.png",
                 "bg": ""
             },
-            "openMode": "normal",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -666,7 +666,7 @@
                 "width": "x*0.8"
             },
             "title": "云服务器",
-            "url": "http://23.224.89.82:3312/vhost/index.php",
+            "url": "http://us14.me0.cn:3312/vhost",
             "customTile": "",
             "urlRandomToken": false
         },
@@ -681,7 +681,7 @@
                 "content": "https://img08.mifile.cn/v1/MI_542ED8B1722DC/13f2bf14970943dd5fe6ed48db5d8f2f.png",
                 "bg": ""
             },
-            "openMode": "normal",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -714,7 +714,7 @@
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/8290/3/16558/4345/628a2d52E22326f52/c5343ae4fa1c14d7.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -747,7 +747,7 @@
                 "content": "https://img03.mifile.cn/v1/MI_542ED8B1722DC/b6a9515560d50e58c8a10ca3d9fb831d.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -846,7 +846,7 @@
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/200255/9/23339/19667/628a2b24Ecfe86a7d/6710384e43ec2151.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -879,7 +879,7 @@
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/69836/1/18507/4745/628a2c75E9bf879d4/ec1d6cf4cb792ab4.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -912,7 +912,7 @@
                 "content": "https://img08.mifile.cn/v1/MI_542ED8B1722DC/95f56e4a5f0d31de839802fa729adc15.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -945,7 +945,7 @@
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/210648/23/21527/4748/628a2cc7E97302363/c9cd38afb5bb2d7c.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -978,7 +978,7 @@
                 "content": "https://img08.mifile.cn/v1/MI_542ED8B1722DC/859edb3c18885cb8e97a8cd92e93a518.png",
                 "bg": "rgb(169,37,60)"
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -1008,7 +1008,7 @@
             "desc": "",
             "icon": {
                 "type": "img",
-                "content": "https://img14.360buyimg.com/ddimg/jfs/t1/195764/36/14193/8119/60f81a6bEc6191732/5a34f258eea30d15.png",
+                "content": "http://cpddd.tk/page/run/favicon.ico",
                 "bg": ""
             },
             "openMode": "outer",
@@ -1028,7 +1028,7 @@
                 "height": "y*0.9",
                 "width": "x*0.3"
             },
-            "title": "微信改步数",
+            "title": "一键刷步2.0",
             "url": "/page/run",
             "customTile": "https://img14.360buyimg.com/ddimg/jfs/t1/195764/36/14193/8119/60f81a6bEc6191732/5a34f258eea30d15.png",
             "urlRandomToken": false
@@ -1203,13 +1203,13 @@
             "autoRun": 0,
             "background": false,
             "badge": 0,
-            "desc": "",
+            "desc": "图床",
             "icon": {
                 "type": "img",
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/206268/17/14796/3918/628a2e88Ee5c2d34f/4323f979142dff07.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -1226,9 +1226,9 @@
                 "height": "y*0.8-80",
                 "width": "x*0.8"
             },
-            "title": "KING图床",
-            "url": "https://image.kieng.cn/",
-            "customTile": "https://image.kieng.cn/",
+            "title": "SuperBed",
+            "url": "https://www.superbed.cn/",
+            "customTile": "",
             "urlRandomToken": true
         },
         "app-236": {
@@ -1268,7 +1268,7 @@
             "addressBar": false,
             "autoRun": 0,
             "background": false,
-            "badge": 0,
+            "badge": 1,
             "desc": "",
             "icon": {
                 "type": "img",
@@ -1295,7 +1295,7 @@
             "title": "小姐姐视频",
             "url": "/page/mm",
             "customTile": "",
-            "urlRandomToken": true
+            "urlRandomToken": false
         },
         "app-244": {
             "addressBar": false,
@@ -1308,7 +1308,7 @@
                 "content": "https://pic.rmb.bdstatic.com/bjh/d46f2a858d1dc508afeb97835b4e4f51.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -1362,105 +1362,6 @@
             "url": "https://www.bejson.com/",
             "customTile": "",
             "urlRandomToken": true
-        },
-        "app-252": {
-            "addressBar": false,
-            "autoRun": 0,
-            "background": false,
-            "badge": 0,
-            "desc": "",
-            "icon": {
-                "type": "img",
-                "content": "https://dd-static.jd.com/ddimg/jfs/t1/67356/19/18254/3842/628a2e5dE64bbbf3f/334d9cbf8b0af66e.png",
-                "bg": ""
-            },
-            "openMode": "max",
-            "plugin": false,
-            "position": {
-                "autoOffset": true,
-                "left": true,
-                "top": true,
-                "x": "x*0.05",
-                "y": "y*0.05"
-            },
-            "version": "1.0.0",
-            "poweredBy": "",
-            "resizable": true,
-            "single": false,
-            "size": {
-                "height": "y*0.8-80",
-                "width": "x*0.8"
-            },
-            "title": "聚合图床",
-            "url": "/page/tu",
-            "customTile": "",
-            "urlRandomToken": true
-        },
-        "app-253": {
-            "addressBar": false,
-            "autoRun": 0,
-            "background": false,
-            "badge": 0,
-            "desc": "",
-            "icon": {
-                "type": "img",
-                "content": "https://cdn.u1.huluxia.com/g4/M01/D5/BB/rBAAdmFv6ZWAVg7gAADr9eFp050730.png",
-                "bg": ""
-            },
-            "openMode": "outer",
-            "plugin": false,
-            "position": {
-                "autoOffset": true,
-                "left": true,
-                "top": true,
-                "x": "x*0.05",
-                "y": "y*0.05"
-            },
-            "version": "1.0.0",
-            "poweredBy": "",
-            "resizable": true,
-            "single": false,
-            "size": {
-                "height": "y*0.8-80",
-                "width": "x*0.8"
-            },
-            "title": "小游戏",
-            "url": "http://47.106.100.153:99/game",
-            "customTile": "",
-            "urlRandomToken": true
-        },
-        "app-260": {
-            "addressBar": false,
-            "autoRun": 0,
-            "background": false,
-            "badge": 0,
-            "desc": "",
-            "icon": {
-                "type": "img",
-                "content": "https://cdn.u1.huluxia.com/g4/M03/CF/AB/rBAAdmFpsoCAJorQAABKNZFvszM717.png",
-                "bg": ""
-            },
-            "openMode": "max",
-            "plugin": false,
-            "position": {
-                "autoOffset": true,
-                "left": true,
-                "top": true,
-                "x": "x*0.05",
-                "y": "y*0.05"
-            },
-            "version": "1.0.0",
-            "poweredBy": "",
-            "resizable": true,
-            "single": false,
-            "size": {
-                "height": "y*0.8-80",
-                "width": "x*0.8"
-            },
-            "title": "LspTV",
-            "url": "/ys",
-            "customTile": "/ys",
-            "urlRandomToken": false
         },
         "app-263": {
             "addressBar": false,
@@ -1830,13 +1731,13 @@
             "autoRun": 0,
             "background": false,
             "badge": 0,
-            "desc": "",
+            "desc": "图床",
             "icon": {
                 "type": "img",
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/8944/20/17085/3667/628a2e5dEfbc6397b/929ae3e45f56b176.png",
                 "bg": ""
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -1853,9 +1754,9 @@
                 "height": "y*0.8-80",
                 "width": "x*0.8"
             },
-            "title": "全能图床",
-            "url": "https://tool.liumingye.cn/tuchuang/",
-            "customTile": "https://tool.liumingye.cn/tuchuang/",
+            "title": "imgtp",
+            "url": "https://www.imgtp.com/",
+            "customTile": "",
             "urlRandomToken": true
         },
         "app-280": {
@@ -1998,7 +1899,7 @@
             "desc": "帮你百度一下",
             "icon": {
                 "type": "img",
-                "content": "https://pic1.58cdn.com.cn/nowater/webim/big/n_v226963b6df7d94231aefb987cfcf1151f.png",
+                "content": "https://s1.4sai.com/src/img/png/27/27a11c94afa948a98f24dde4fc909e9a.png?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/&e=1735488000&token=1srnZGLKZ0Aqlz6dk7yF4SkiYf4eP-YrEOdM1sob:7Aw67mTLvYwDFoftT4qL3EX45gw=",
                 "bg": ""
             },
             "openMode": "max",
@@ -2085,9 +1986,9 @@
                 "width": "x*0.8"
             },
             "title": "厂长资源",
-            "url": "https://czzyhd.com/",
+            "url": "https://cz01.cc",
             "customTile": "",
-            "urlRandomToken": true
+            "urlRandomToken": false
         },
         "app-301": {
             "addressBar": false,
@@ -2151,7 +2052,7 @@
                 "width": "x*0.8"
             },
             "title": "低端影视",
-            "url": "https://ddys.art/",
+            "url": "https://ddys.pro",
             "customTile": "",
             "urlRandomToken": true
         },
@@ -2551,39 +2452,6 @@
             "customTile": "",
             "urlRandomToken": false
         },
-        "app-319": {
-            "addressBar": false,
-            "autoRun": 0,
-            "background": false,
-            "badge": 0,
-            "desc": "",
-            "icon": {
-                "type": "img",
-                "content": "https://dd-static.jd.com/ddimg/jfs/t1/95133/3/31964/78458/633fbd68Eb7640dab/f766838a3a688f4d.png",
-                "bg": ""
-            },
-            "openMode": "outer",
-            "plugin": false,
-            "position": {
-                "autoOffset": true,
-                "left": true,
-                "top": true,
-                "x": "x*0.05",
-                "y": "y*0.05"
-            },
-            "version": "1.0.0",
-            "poweredBy": "",
-            "resizable": true,
-            "single": false,
-            "size": {
-                "height": "y*0.8-80",
-                "width": "x*0.8"
-            },
-            "title": "小姐姐视频2.0",
-            "url": "http://cpddd.tk/page/xjj",
-            "customTile": "http://cpddd.tk/page/xjj",
-            "urlRandomToken": false
-        },
         "app-320": {
             "addressBar": false,
             "autoRun": 0,
@@ -2744,8 +2612,8 @@
                 "height": "y*0.8-80",
                 "width": "x*0.8"
             },
-            "title": "领会员",
-            "url": "/page/qvip",
+            "title": "免费领SVIP",
+            "url": "/page/svip",
             "customTile": "",
             "urlRandomToken": false
         },
@@ -2757,7 +2625,7 @@
             "desc": "",
             "icon": {
                 "type": "img",
-                "content": "https://pic1.58cdn.com.cn/nowater/webim/big/n_v27753d6be6f8d46cd9cc82e932fca9b9b.png",
+                "content": "https://pic.imgdb.cn/item/64e1cb57661c6c8e54c10632.png",
                 "bg": ""
             },
             "openMode": "outer",
@@ -2880,6 +2748,204 @@
             "url": "/page/mv",
             "customTile": "https://img06.mifile.cn/v1/MI_542ED8B1722DC/fec5e0538f2d48fcadac68bd9d27eea9.png",
             "urlRandomToken": false
+        },
+        "app-329": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://img07.mifile.cn/v1/MI_542ED8B1722DC/eb3fc6a292907a8ffb44ea2e0c01872a.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": false,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "网站缩略图",
+            "url": "/page/web",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-330": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://pic2.imgdb.cn/item/6454bbfe0d2dde57772439da.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "在线翻译",
+            "url": "/page/fanyi",
+            "customTile": "",
+            "urlRandomToken": false
+        },
+        "app-331": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 1,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://img1.imgtp.com/2023/06/02/43XOAGUN.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "BingAI",
+            "url": "https://bing.cpddd.tk",
+            "customTile": "",
+            "urlRandomToken": true
+        },
+        "app-332": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "str",
+                "content": "",
+                "bg": ""
+            },
+            "openMode": "max",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": false,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "——————",
+            "url": "http://676hsck.cc/",
+            "customTile": "",
+            "urlRandomToken": false
+        },
+        "app-335": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 0,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://pic.imgdb.cn/item/64e1cc8a661c6c8e54c52251.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": false,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "data",
+            "url": "https://cpddd.tk/up.html",
+            "customTile": "",
+            "urlRandomToken": false
+        },
+        "app-336": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 1,
+            "desc": "https://s1.aigei.com/src/img/gif/22/22e2108c104042cb8ff29b87c9c9f80f.gif?imageMogr2/auto-orient/thumbnail/!282x225r/gravity/Center/crop/282x225/quality/85/&e=1735488000&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:ssujPGrhyEOtGJ66-ROwdMHzkwE=",
+            "icon": {
+                "type": "img",
+                "content": "https://s1.aigei.com/src/img/png/6b/6bff7a2fdb254e67a7ff4d78cfe0e306.png?e=1735488000&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:DT3xF1Z0uGxG2KQj5_a5rPUqAT8=",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": true,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "原神启动",
+            "url": "/page/yuan",
+            "customTile": "/page/yuan",
+            "urlRandomToken": false
         }
     },
     "shortcuts": [
@@ -2957,26 +3023,20 @@
             "title": "图床",
             "children": [
                 {
-                    "app": "ylui-image-host",
-                    "title": "IMGHUB图床",
-                    "params": {},
-                    "hash": ""
-                },
-                {
                     "app": "app-226",
-                    "title": "KING图床",
-                    "params": {},
-                    "hash": ""
-                },
-                {
-                    "app": "app-252",
-                    "title": "聚合图床",
+                    "title": "SuperBed",
                     "params": {},
                     "hash": ""
                 },
                 {
                     "app": "app-279",
-                    "title": "全能图床",
+                    "title": "imgtp",
+                    "params": {},
+                    "hash": ""
+                },
+                {
+                    "app": "ylui-image-host",
+                    "title": "ImageHub",
                     "params": {},
                     "hash": ""
                 }
@@ -3091,18 +3151,6 @@
             "hash": ""
         },
         {
-            "app": "app-275",
-            "title": "职教云自动签到",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-209",
-            "title": "微信改步数",
-            "params": {},
-            "hash": ""
-        },
-        {
             "title": "免费观影",
             "children": [
                 {
@@ -3114,12 +3162,6 @@
                 {
                     "app": "app-302",
                     "title": "低端影视",
-                    "params": {},
-                    "hash": ""
-                },
-                {
-                    "app": "app-301",
-                    "title": "鸭奈飞影视",
                     "params": {},
                     "hash": ""
                 },
@@ -3234,18 +3276,6 @@
             "hash": ""
         },
         {
-            "app": "app-243",
-            "title": "随机小姐姐",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-319",
-            "title": "小姐姐视频2.0",
-            "params": {},
-            "hash": ""
-        },
-        {
             "app": "app-315",
             "title": "买家秀💖",
             "params": {},
@@ -3270,20 +3300,20 @@
             "hash": ""
         },
         {
-            "app": "app-324",
-            "title": "领会员",
-            "params": {},
-            "hash": ""
-        },
-        {
-            "app": "app-323",
-            "title": "ChatGPT",
+            "app": "app-263",
+            "title": "影视大全",
             "params": {},
             "hash": ""
         },
         {
             "app": "app-325",
             "title": "一键刷步",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-209",
+            "title": "一键刷步2.0",
             "params": {},
             "hash": ""
         },
@@ -3306,8 +3336,32 @@
             "hash": ""
         },
         {
-            "app": "app-263",
-            "title": "影视大全",
+            "app": "app-323",
+            "title": "ChatGPT",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-329",
+            "title": "网站缩略图",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-330",
+            "title": "在线翻译",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-243",
+            "title": "小姐姐视频",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-336",
+            "title": "原神启动",
             "params": {},
             "hash": ""
         }
@@ -3394,6 +3448,12 @@
         "width": 992,
         "height": 562,
         "sidebar": [
+            {
+                "app": "app-335",
+                "title": "data",
+                "params": {},
+                "hash": ""
+            },
             {
                 "app": "app-313",
                 "title": "upLoad",
@@ -3577,6 +3637,12 @@
             "itemPushed-277": {
                 "app": "app-274",
                 "title": "超级书签",
+                "params": {},
+                "hash": ""
+            },
+            "itemPushed-334": {
+                "app": "app-332",
+                "title": "",
                 "params": {},
                 "hash": ""
             }

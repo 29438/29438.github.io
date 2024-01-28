@@ -1,0 +1,3 @@
+http://www.xfubk.com/api.php
+http://lx.linxi.icu/API/xjj.php
+http://lx.linxi.icu/API/meitui.php
