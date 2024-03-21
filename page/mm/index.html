@@ -1,108 +1,257 @@
-​
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+
 	<head>
-		<meta charSet="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta http-equiv="Cache-Control" content="no-transform" />
-		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<meta name="referrer" content="never">
-		<meta name="renderer" content="webkit" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>小姐姐在线随机播放</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script src="./static/qmsg.js"></script>
+		<link href="./static/qmsg.css" rel="stylesheet">
+		<title>随机视频</title>
+		<script>
+			// 浏览器标题切换  
+			var OriginTitile = document.title; // 保存之前页面标题  
+			var titleTime;
+			document.addEventListener('visibilitychange', function() {
+				if (document.hidden) {
+					document.title = '不要走呀Σ(っ °Д °;)っ';
+					clearTimeout(titleTime);
+				} else {
+					document.title = 'o(*￣▽￣*)ブ';
+					titleTime = setTimeout(function() {
+						document.title = OriginTitile;
+					}, 2000); // 2秒后恢复原标题  
+				}
+			});
+		</script>
+		<style>
+			/* 去除链接、按钮和输入框的默认样式 */
+			a,
+			button,
+			input,
+			#selectOption {
+				outline: none;
+				border: none;
+			}
+
+			/* 去除链接、按钮和输入框的点击高亮效果 */
+			a,
+			button,
+			input {
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+
+			body {
+				overflow: hidden;
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				background: linear-gradient(60deg, #ffffff, #94d0ff);
+				color: #fff;
+				backdrop-filter: blur(100px);
+			}
+
+			#infor {
+				border-radius: 40px;
+				box-shadow: 0 0 40px rgb(0 51 203 / 50%);
+				width: 45vh;
+				height: 30vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #ffffff;
+				font-size: 30px;
+				background: linear-gradient(45deg, #20fff2, #8100ff);
+			}
+
+			#video-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				width: 92vw;
+				height: 80vh;
+			}
+
+			video {
+				border-radius: 30px;
+				box-shadow: 0 0 40px rgb(0 51 203 / 50%);
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+			button {
+				margin-top: 30px;
+				height: 52px;
+				width: 90px;
+				background-color: #0043ff;
+				color: #fff;
+				font-size: 1.1rem;
+				border: none;
+				border-radius: 33px;
+				cursor: pointer;
+			}
+
+			#selectOption {
+				height: 50px;
+				width: 80px;
+				background-color: #0043ff;
+				color: #fff;
+				font-size: 1.1rem;
+				border: none;
+				border-radius: 33px;
+				cursor: pointer;
+			}
+
+			/* 自动播放开关样式 */
+			#auto-play-toggle {
+				margin-top: 30px;
+				height: 52px;
+				width: 90px;
+				background-color: #0043ff;
+				color: #fff;
+				font-size: 1.1rem;
+				border: none;
+				border-radius: 33px;
+				cursor: pointer;
+			}
+		</style>
 	</head>
 
-	<style type="text/css">
-		* {
-			border: 0;
-			margin: 0;
-			padding: 0;
-			outline: none;
-			box-sizing: border-box;
-		}
-
-		body {
-			background: #FFC0CB;
-			width: 100vw;
-			height: 100vh;
-			overflow: hidden;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-
-		#main {
-			height: calc(90vh - 60px);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		#player {
-			width: 85%;
-			height: auto;
-			max-height: 95%;
-		}
-
-		#buttons {
-			height: 60px;
-			padding: 10px;
-		}
-
-		#switch,
-		#next,
-		#dijia {
-			background: #FFF;
-			background: linear-gradient(to bottom, #00BFFF, #00BFFF);
-			color: #AF2E08;
-			font-size: 18px;
-			font-weight: bold;
-			height: 40px;
-			padding: 0px 15px;
-			margin: 2px 5px;
-			border-radius: 15px;
-		}
-	</style>
-
 	<body>
+		<!-- 视频容器 -->
+		<div id="video-container">
+			<!-- 默认提示信息 -->
+			<div id="infor">
+				<img src="https://api.uomg.com/api/rand.img3" alt=""
+					style="max-width: 100%; height: auto; border-radius: 40px;" />
+			</div>
+			<!-- 视频元素，初始时隐藏 -->
+			<video controls style="display: none" id="video" preload="metadata" poster="a.jpg"></video>
+		</div>
 
-		<section id="main">
-			<video id="player" src="http://www.xfubk.com/api.php" controls webkit-playsinline playsinline></video>
-		</section>
-		<section id="buttons">
-			<button id="switch">连续: 开</button>
-			<button id="next">播放下一个</button>
-		</section>
+		<!-- 按钮区域 -->
+		<div style="display: flex; gap: 20px;">
+			<!-- 播放按钮 -->
+			<button id="start" onclick="loadAndPlayNextVideo()">开始播放</button>
+
+			<!-- 播放下一个按钮 -->
+			<button style="display: none" id="select-button">
+				<select id="selectOption">
+					<option value="https://api.xyttkx.cn/yzsp.php">颜值</option>
+					<option value="https://api.xyttkx.cn/mtsp.php">美腿</option>
+					<option value="https://api.xyttkx.cn/tmsp.php">甜妹</option>
+					<option value="https://api.xyttkx.cn/rwsp.php">热舞</option>
+					<option value="https://api.xyttkx.cn/hfsp.php">汉服</option>
+					<option value="https://api.xyttkx.cn/ngsp.php">女高</option>
+					<option value="https://api.xyttkx.cn/bzsp.php">变装</option>
+					<option value="https://api.xyttkx.cn/cossp.php">COS</option>
+					<option value="https://www.cunshao.com/666666/api/web.php">综合①</option>
+					<option value="http://www.xfubk.com/api.php">综合②</option>
+					<option value="https://www.cunshao.com/666666/api/pc.php">综合③</option>
+					<option value="http://v.nrzj.vip/video.php">综合④</option>
+					<option value="https://api.xyttkx.cn/sgsp.php">帅哥</option>
+					<option value="https://188sp.711888.xyz/188/video.php">音乐</option>
+					<option value="https://api.xyttkx.cn/xxfcsp.php">小新翻唱</option>
+					<option value="https://api.xyttkx.cn/lyyfcsp.php">懒羊羊翻唱</option>
+				</select>
+			</button>
+
+			<!-- 自动播放开关按钮 -->
+			<button id="auto-play-toggle" aria-pressed="true" style="display: none;">自动播放</button>
+
+		</div>
+
+		<!-- JavaScript 代码 -->
 		<script>
-			(function(window, document) {
-				if (top != self) {
-					window.top.location.replace(self.location.href);
+			Qmsg.config({
+				showClose: true,
+				timeout: 500
+			})
+
+			const video = document.getElementById('video');
+			const start = document.getElementById('start');
+			const infor = document.getElementById('infor');
+			const selectOption = document.getElementById('selectOption');
+			const selectButton = document.getElementById('select-button');
+			const autoPlayToggle = document.getElementById('auto-play-toggle');
+
+			let isAutoPlayEnabled = true;
+
+			video.src = selectOption.value;
+
+			// 为开始播放按钮添加点击事件
+			start.addEventListener('click', loadAndPlayNextVideo);
+
+			// 监听视频canplaythrough事件，确保视频加载完成后再播放
+			video.addEventListener('canplaythrough', function() {
+				this.play();
+			});
+
+			// 监听视频结束事件
+			video.addEventListener('ended', function() {
+				if (isAutoPlayEnabled) {
+					loadAndPlayNextVideo();
+				} else {
+					// 当自动播放关闭时，重新播放当前视频
+					video.currentTime = 0;
+					video.play();
 				}
-				var get = function(id) {
-					return document.getElementById(id);
-				}
-				var bind = function(element, event, callback) {
-					return element.addEventListener(event, callback);
-				}
-				var auto = true;
-				var player = get('player');
-				var randomm = function() {
-					player.src = 'http://www.xfubk.com/api.php?_t=' + Math.random();
-					player.play();
-				}
-				bind(get('next'), 'click', randomm);
-				bind(player, 'error', function() {
-					randomm();
+			});
+
+			selectOption.addEventListener('change', () => {
+				video.src = selectOption.value;
+				loadAndPlayNextVideo();
+			});
+
+			autoPlayToggle.addEventListener('click', () => {
+				isAutoPlayEnabled = !isAutoPlayEnabled;
+				autoPlayToggle.textContent = `自动：${isAutoPlayEnabled ? '开' : '关'}`;
+			});
+
+			// 在loadeddata事件触发后尝试播放，这通常发生在视频的第一帧数据已加载完成时，可以更快地响应用户操作
+			video.addEventListener('loadeddata', function() {
+				this.play();
+			});
+
+			function loadAndPlayNextVideo() {
+				Qmsg.success("加载成功");
+				start.textContent = "下一个";
+				infor.style.display = 'none';
+				selectButton.style.display = 'block';
+				video.style.display = 'block';
+				video.src = selectOption.value; // 更新视频源至当前选中的选项值
+				video.controls = true; // 添加此行代码启用视频自带的控制条
+				autoPlayToggle.style.display = 'inline-block'; // 显示自动播放按钮
+
+				video.addEventListener('error', function() {
+					Qmsg.error("视频加载失败");
 				});
-				bind(get('switch'), 'click', function() {
-					auto = !auto;
-					this.innerText = '连续: ' + (auto ? '开' : '关');
+
+				video.load().then(() => {
+					// 删除手动播放逻辑，因为controls属性会提供播放暂停及进度拖动功能
+					// video.play().catch((error) => {
+					//     console.error('不允许自动播放:', error);
+					// });
 				});
-				bind(player, 'ended', function() {
-					if (auto) randomm();
-				});
-			})(window, document);
+
+				// 清除现有视频缓冲并重新加载新视频
+				if (video.readyState > 0) {
+					video.currentTime = 0;
+					try {
+						video.pause(); // 可能需要先停止当前视频
+						video.load();
+					} catch (e) {
+						console.log('视频清理出错:', e);
+					}
+				}
+
+			}
 		</script>
 	</body>
 </html>
