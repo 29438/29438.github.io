@@ -7,10 +7,10 @@
         "wallpaperSlide": true,
         "wallpaperSlideRandom": true,
         "wallpaperSlideItv": 1,
-        "wallpaperSlideTime": 1703258102619,
-        "wallpaperSlideIndex": 8,
+        "wallpaperSlideTime": 1712319094014,
+        "wallpaperSlideIndex": 17,
         "openMax": 9,
-        "idCounter": 337,
+        "idCounter": 338,
         "themeColor": "rgba(71,71,70,1)",
         "autoThemeColor": true,
         "wallpapers": [
@@ -417,7 +417,7 @@
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/205401/22/22962/5529/628a29e5Eefe8cecb/0736abfaf21fe9ae.png",
                 "bg": ""
             },
-            "openMode": "normal",
+            "openMode": "max",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -516,7 +516,7 @@
                 "content": "https://img07.mifile.cn/v1/MI_542ED8B1722DC/d312d9488e5ea59fec29f30d0b7e47dc.png",
                 "bg": ""
             },
-            "openMode": "normal",
+            "openMode": "max",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -666,7 +666,7 @@
                 "width": "x*0.8"
             },
             "title": "云服务器",
-            "url": "http://us14.me0.cn:3312/vhost",
+            "url": "http://mg.707077.xyz:3312/vhost/index.php",
             "customTile": "",
             "urlRandomToken": false
         },
@@ -1110,7 +1110,7 @@
                 "content": "https://dd-static.jd.com/ddimg/jfs/t1/103056/21/33503/72376/633fbd98Ecdfdd300/843605585bc0ce13.png",
                 "bg": "#d1b9f0"
             },
-            "openMode": "max",
+            "openMode": "outer",
             "plugin": false,
             "position": {
                 "autoOffset": true,
@@ -2918,7 +2918,7 @@
             "addressBar": false,
             "autoRun": 0,
             "background": false,
-            "badge": 1,
+            "badge": 0,
             "desc": "https://s1.aigei.com/src/img/gif/22/22e2108c104042cb8ff29b87c9c9f80f.gif?imageMogr2/auto-orient/thumbnail/!282x225r/gravity/Center/crop/282x225/quality/85/&e=1735488000&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:ssujPGrhyEOtGJ66-ROwdMHzkwE=",
             "icon": {
                 "type": "img",
@@ -2945,6 +2945,39 @@
             "title": "原神启动",
             "url": "/page/yuan",
             "customTile": "/page/yuan",
+            "urlRandomToken": false
+        },
+        "app-337": {
+            "addressBar": false,
+            "autoRun": 0,
+            "background": false,
+            "badge": 1,
+            "desc": "",
+            "icon": {
+                "type": "img",
+                "content": "https://d.kstore.space/download/7151/img/铲铲.png",
+                "bg": ""
+            },
+            "openMode": "outer",
+            "plugin": false,
+            "position": {
+                "autoOffset": true,
+                "left": true,
+                "top": true,
+                "x": "x*0.05",
+                "y": "y*0.05"
+            },
+            "version": "1.0.0",
+            "poweredBy": "",
+            "resizable": false,
+            "single": false,
+            "size": {
+                "height": "y*0.8-80",
+                "width": "x*0.8"
+            },
+            "title": "金铲铲无限金币版",
+            "url": "https://mp.weixin.qq.com/s/M8yapbcqRXXpkLqqZ-lGQg",
+            "customTile": "",
             "urlRandomToken": false
         }
     },
@@ -3312,12 +3345,6 @@
             "hash": ""
         },
         {
-            "app": "app-209",
-            "title": "一键刷步2.0",
-            "params": {},
-            "hash": ""
-        },
-        {
             "app": "app-326",
             "title": "QQ音乐刷时长",
             "params": {},
@@ -3362,6 +3389,12 @@
         {
             "app": "app-336",
             "title": "原神启动",
+            "params": {},
+            "hash": ""
+        },
+        {
+            "app": "app-337",
+            "title": "金铲铲无限金币版",
             "params": {},
             "hash": ""
         }
