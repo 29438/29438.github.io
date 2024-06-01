@@ -126,9 +126,9 @@
 	<body>
 		<!-- 视频容器 -->
 		<div id="video-container">
-			<!-- 默认提示信息 -->
+			<!-- 默认提示信息https://api.uomg.com/api/rand.img3   https://api.lolimi.cn/API/tup/xjj.php  https://api.suyanw.cn/api/ksxjj-->
 			<div id="infor">
-				<img src="https://api.uomg.com/api/rand.img3" alt=""
+				<img src="https://imgapi.xl0408.top/index.php" alt=""
 					style="max-width: 100%; height: auto; border-radius: 40px;" />
 			</div>
 			<!-- 视频元素，初始时隐藏 -->
@@ -144,18 +144,20 @@
 			<button style="display: none" id="select-button">
 				<select id="selectOption">
 					<option value="https://api.xyttkx.cn/yzsp.php">颜值</option>
-					<option value="https://api.xyttkx.cn/mtsp.php">美腿</option>
+					<option value="https://api.xyttkx.cn/sgsp.php">帅哥</option>
 					<option value="https://api.xyttkx.cn/tmsp.php">甜妹</option>
 					<option value="https://api.xyttkx.cn/rwsp.php">热舞</option>
+					<option value="https://api.xyttkx.cn/mtsp.php">美腿</option>
 					<option value="https://api.xyttkx.cn/hfsp.php">汉服</option>
 					<option value="https://api.xyttkx.cn/ngsp.php">女高</option>
 					<option value="https://api.xyttkx.cn/bzsp.php">变装</option>
-					<option value="https://api.xyttkx.cn/cossp.php">COS</option>
+					<option value="http://api.yujn.cn/api/luoli.php">Lolita</option>
 					<option value="https://www.cunshao.com/666666/api/web.php">综合①</option>
-					<option value="http://www.xfubk.com/api.php">综合②</option>
-					<option value="https://www.cunshao.com/666666/api/pc.php">综合③</option>
-					<option value="http://v.nrzj.vip/video.php">综合④</option>
-					<option value="https://api.xyttkx.cn/sgsp.php">帅哥</option>
+					<option value="http://api.yujn.cn/api/zzxjj.php">综合②</option>
+					<option value="http://api.yujn.cn/api/xjj.php">综合③</option>
+					<option value="http://api.yujn.cn/api/juhexjj.php">综合④</option>
+					<option value="https://www.cunshao.com/666666/api/pc.php">综合⑤</option>
+					<option value="http://v.nrzj.vip/video.php">综合⑥</option>
 					<option value="https://188sp.711888.xyz/188/video.php">音乐</option>
 					<option value="https://api.xyttkx.cn/xxfcsp.php">小新翻唱</option>
 					<option value="https://api.xyttkx.cn/lyyfcsp.php">懒羊羊翻唱</option>
@@ -171,7 +173,7 @@
 		<script>
 			Qmsg.config({
 				showClose: true,
-				timeout: 500
+				timeout: 300
 			})
 
 			const video = document.getElementById('video');
@@ -220,7 +222,7 @@
 			});
 
 			function loadAndPlayNextVideo() {
-				Qmsg.success("加载成功");
+				// Qmsg.success("加载成功");
 				start.textContent = "下一个";
 				infor.style.display = 'none';
 				selectButton.style.display = 'block';
@@ -253,5 +255,6 @@
 
 			}
 		</script>
+<script type="text/javascript" src="https://js.users.51.la/21440983.js"></script>
 	</body>
 </html>

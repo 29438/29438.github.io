@@ -11,10 +11,9 @@
 **/
 
 jsApiConfig([
-	"https://2.08bk.com/?url=",
-	"https://www.playm3u8.cn/jiexi.php?url=",
+        "https://jx.aidouer.net/?url=",
+        "https://jx.playerjy.com/?url=",
         "https://www.administratorw.com/video.php?url=",
-	"https://jsap.attakids.com/?url=",
-	"https://okjx.cc/?url=",
+	"https://www.playm3u8.cn/jiexi.php?url=",
 
 ]);

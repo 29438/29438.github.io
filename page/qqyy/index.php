@@ -2,9 +2,10 @@
 <html lang="zh">
  <head>
   <meta charset="UTF-8"/>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>QQ音乐听歌时长提交</title>
+  <title>QQ音乐刷听歌时长</title>
   <meta name="Description" content="QQ音乐听歌时长提交"/>
   <meta name="Keywords" content="QQ音乐听歌时长提交"/>
     <link rel="stylesheet" href="layui/css/layui.css">
@@ -12,13 +13,13 @@
 <body style="background-color: #F2F2F2">
   <div class="layui-container">
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-      <legend>QQ音乐听歌时长提交</legend>
+      <legend>QQ音乐听歌刷时长</legend>
     </fieldset>
     <div class="layui-row layui-col-space15">
       <div class="layui-col-md12">
         <div class="layui-card">
           <div class="layui-card-header">使用说明：</div>
-          <div class="layui-card-body">免密提交 查今日听歌时长 <a href="https://y.qq.com/m/client/vipexchange/index.html" target="_blank">https://y.qq.com/m/client/vipexchange/index.html</a>
+          <div class="layui-card-body">在QQ打开右侧链接查今日听歌时长 <a href="https://y.qq.com/m/client/vipexchange/index.html" target="_blank">https://y.qq.com/m/client/vipexchange/index.html</a>
           </div>
         </div>
       </div>
@@ -80,7 +81,7 @@ $(document).ready(function(){
             }else if(data.code==-1){
             layer.alert(''+ data.warning +'', {icon: 5});
             }
-			},
+			},		
             error: function(error) {
             layer.alert('网络异常', {icon: 5});
             }

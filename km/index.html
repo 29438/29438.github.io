@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频列表</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #videoList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .videoCard {
+            box-sizing: border-box;
+            width: 48%; /* 2列布局 */
+            margin: 0 0 20px;
+            overflow: hidden;
+        }
+
+        .videoCard img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .videoCard p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        #loading {
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #modal video {
+            width: 80%;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+
+        #closeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="videoList"></div>
+<div id="loading">加载中...</div>
+
+<div id="modal">
+    <span id="closeButton" onclick="closeModal()">✖</span>
+    <video controls id="modalVideo"></video>
+</div>
+
+<script>
+    let currentPage = 1;
+    let isLoading = false;
+
+    function fetchVideoList(page) {
+        const apiUrl = `kuaimao.php?type=getList&page=${page}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.code === 200) {
+                    if (data.data !== null) {
+                        displayVideoList(data.data);
+                    } else {
+                        console.log("没有更多数据了");
+                    }
+                } else {
+                    console.error(`请求失败: ${data.msg}`);
+                }
+                isLoading = false;
+            })
+            .catch(error => {
+                console.error(`发生错误: ${error}`);
+                isLoading = false;
+            });
+    }
+
+    function displayVideoList(videoList) {
+        const videoListContainer = document.getElementById('videoList');
+
+        videoList.forEach(video => {
+            const videoCard = document.createElement('div');
+            videoCard.className = 'videoCard';
+
+            const thumbnail = document.createElement('img');
+            thumbnail.src = video.mv_img_url;
+            thumbnail.addEventListener('click', () => openModal(video.mv_play_url));
+            videoCard.appendChild(thumbnail);
+
+            const title = document.createElement('p');
+            title.textContent = video.mv_title;
+            videoCard.appendChild(title);
+
+            videoListContainer.appendChild(videoCard);
+        });
+    }
+
+    function loadMore() {
+        if (!isLoading) {
+            isLoading = true;
+            currentPage++;
+            fetchVideoList(currentPage);
+        }
+    }
+
+    function isScrollNearBottom() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const bodyHeight = document.body.offsetHeight;
+
+        return bodyHeight - (scrollPosition + windowHeight) < 200;
+    }
+
+    function openModal(videoUrl) {
+        const modal = document.getElementById('modal');
+        const modalVideo = document.getElementById('modalVideo');
+
+        modalVideo.src = videoUrl;
+        modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('modal');
+        const modalVideo = document.getElementById('modalVideo');
+
+        modalVideo.pause();
+        modalVideo.src = '';
+        modal.style.display = 'none';
+    }
+
+    window.addEventListener('scroll', () => {
+        if (isScrollNearBottom()) {
+            loadMore();
+        }
+    });
+
+    document.body.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // 初始化页面时获取第一页的视频列表
+    fetchVideoList(currentPage);
+</script>
+
+</body>
+</html>

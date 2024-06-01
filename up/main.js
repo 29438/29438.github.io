@@ -21,7 +21,7 @@
 		// Array of objects containing the src and type
 		// of different video formats to add
 		src: [{
-				src: 'https://cdn.jsdelivr.net/gh/7ik/image@main/1645152538063.mp4',
+				src: 'http://storage.live.com/items/459AAA8E08393D91!3255:/YunEr.mp4',
 				type: 'video/mp4'
 			},
 			{

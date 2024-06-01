@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body onselectstart="return false" background="boom.gif">
+
+    <audio id="myAudio" autoplay>
+        <source src="music.wav" type="audio/wav">
+    </audio>
+
+
+</body>
+
+<script>
+    document.addEventListener("click", enableAutoplay);
+
+    function enableAutoplay() {
+
+        let promise = document.getElementById("myAudio").play();
+
+        if (promise !== undefined) {
+            promise.then(() => {
+                console.log("Autoplay started!")
+            }).catch(error => {
+                console.log("Autoplay prevented")
+            });
+        }
+
+        // 移除点击监听事件
+        document.removeEventListener("click", enableAutoplay);
+    }
+</script>
+
+</html>

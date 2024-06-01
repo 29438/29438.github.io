@@ -11,7 +11,7 @@ $data = data(array("act" => "index"));
 <meta name="referrer" content="no-referrer">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-<title>腾讯视频-全站免费版</title>
+<title>影视大全</title>
 <meta name="keywords" content="学习交流演示">
 <meta name="description" content="学习交流演示">
 <link rel="stylesheet" type="text/css" href="./static_qq/css/jquery.mobile.min.css">
