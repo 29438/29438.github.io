@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="./static/qmsg.js"></script>
+    <link href="./static/qmsg.css" rel="stylesheet">
+    <title>随机短视频 | CP.</title>
+    <style>
+        /* 去除链接、按钮和输入框的默认样式 */
+        a, button, input, #selectOption {
+            outline: none;
+            border: none;
+        }
+
+        /* 去除链接、按钮和输入框的点击高亮效果 */
+        a, button, input {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        body {
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(60deg, #ffffff, #94d0ff);
+            color: #fff;
+            backdrop-filter: blur(100px);
+        }
+
+        /* #infor {
+            border-radius: 40px;
+            box-shadow: 0 0 40px rgb(0 51 203 / 50%);
+            width: 45vh;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 30px;
+            background: linear-gradient(45deg, #20fff2, #8100ff);
+        } */
+
+        #video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 92vw;
+            height: 80vh;
+        }
+
+        video {
+            border-radius: 30px;
+            box-shadow: 0 0 40px rgb(0 51 203 / 50%);
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        button {
+            margin-top: 30px;
+            height: 52px;
+            width: 90px;
+            background-color: #0043ff;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 33px;
+            cursor: pointer;
+        }
+
+        #selectOption {
+            height: 50px;
+            width: 80px;
+            background-color: #0043ff;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 33px;
+            cursor: pointer;
+        }
+
+        /* 自动播放开关样式 */
+        #auto-play-toggle {
+            margin-top: 30px;
+            height: 52px;
+            width: 90px;
+            background-color: #0043ff;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 33px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // 浏览器标题切换  
+        var OriginTitile = document.title; // 保存之前页面标题  
+        var titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '不要走呀Σ(っ °Д °;)っ';
+                clearTimeout(titleTime);
+            } else {
+                document.title = 'o(*￣▽￣*)ブ';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                }, 2000); // 2秒后恢复原标题  
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 视频容器 -->
+    <div id="video-container">
+        <!-- 视频元素 -->
+        <video controls id="video" preload="metadata" poster="a.jpg"></video>
+    </div>
+
+    <!-- 按钮区域 -->
+    <div style="display: flex; gap: 20px;">
+        <!-- 播放下一个按钮 -->
+        <button id="next" onclick="loadAndPlayNextVideo()">下一个</button>
+
+        <!-- 选择类别按钮 -->
+        <button style="display: block" id="select-button">
+            <select id="selectOption">
+                <option value="https://api.xyttkx.cn/yzsp.php">颜值</option>
+                <option value="https://api.xyttkx.cn/sgsp.php">帅哥</option>
+                <option value="https://api.xyttkx.cn/tmsp.php">甜妹</option>
+                <option value="https://api.xyttkx.cn/rwsp.php">热舞</option>
+                <option value="https://api.xyttkx.cn/mtsp.php">美腿</option>
+                <option value="https://api.xyttkx.cn/hfsp.php">汉服</option>
+                <option value="https://api.xyttkx.cn/ngsp.php">女高</option>
+                <option value="https://api.xyttkx.cn/bzsp.php">变装</option>
+                <option value="http://api.yujn.cn/api/luoli.php">Lolita</option>
+                <option value="https://www.cunshao.com/666666/api/web.php">综合①</option>
+                <option value="http://api.yujn.cn/api/zzxjj.php">综合②</option>
+                <option value="http://api.yujn.cn/api/xjj.php">综合③</option>
+                <option value="http://api.yujn.cn/api/juhexjj.php">综合④</option>
+                <option value="https://www.cunshao.com/666666/api/pc.php">综合⑤</option>
+                <option value="http://v.nrzj.vip/video.php">综合⑥</option>
+                <option value="https://188sp.711888.xyz/188/video.php">音乐</option>
+                <option value="https://api.xyttkx.cn/xxfcsp.php">小新翻唱</option>
+                <option value="https://api.xyttkx.cn/lyyfcsp.php">懒羊羊翻唱</option>
+            </select>
+        </button>
+
+        <!-- 自动播放开关按钮 -->
+        <button id="auto-play-toggle" aria-pressed="true" style="display: block;">自动播放</button>
+    </div>
+
+    <!-- JavaScript 代码 -->
+    <script>
+        Qmsg.config({
+            showClose: true,
+            timeout: 300
+        })
+
+        const video = document.getElementById('video');
+        const next = document.getElementById('next');
+        const selectOption = document.getElementById('selectOption');
+        const autoPlayToggle = document.getElementById('auto-play-toggle');
+
+        let isAutoPlayEnabled = true;
+
+        video.src = selectOption.value;
+
+        // 监听视频canplaythrough事件，确保视频加载完成后再播放
+        video.addEventListener('canplaythrough', function() {
+            this.play();
+        });
+
+        // 监听视频结束事件
+        video.addEventListener('ended', function() {
+            if (isAutoPlayEnabled) {
+                loadAndPlayNextVideo();
+            } else {
+                // 当自动播放关闭时，重新播放当前视频
+                video.currentTime = 0;
+                video.play();
+            }
+        });
+
+        selectOption.addEventListener('change', () => {
+            video.src = selectOption.value;
+            loadAndPlayNextVideo();
+        });
+
+        autoPlayToggle.addEventListener('click', () => {
+            isAutoPlayEnabled = !isAutoPlayEnabled;
+            autoPlayToggle.textContent = `自动：${isAutoPlayEnabled ? '开' : '关'}`;
+        });
+
+        // 在loadeddata事件触发后尝试播放，这通常发生在视频的第一帧数据已加载完成时，可以更快地响应用户操作
+        video.addEventListener('loadeddata', function() {
+            this.play();
+        });
+
+        function loadAndPlayNextVideo() {
+            next.textContent = "下一个";
+            video.style.display = 'block';
+            video.src = selectOption.value; // 更新视频源至当前选中的选项值
+            video.controls = true; // 添加此行代码启用视频自带的控制条
+
+            video.addEventListener('error', function() {
+                Qmsg.error("视频加载失败");
+            });
+
+            // 清除现有视频缓冲并重新加载新视频
+            if (video.readyState > 0) {
+                video.currentTime = 0;
+                try {
+                    video.pause(); // 可能需要先停止当前视频
+                    video.load();
+                } catch (e) {
+                    console.log('视频清理出错:', e);
+                }
+            }
+        }
+
+        // 页面加载时立即播放视频
+        loadAndPlayNextVideo();
+    </script>
+    <script type="text/javascript" src="https://js.users.51.la/21440983.js"></script>
+</body>
+</html>

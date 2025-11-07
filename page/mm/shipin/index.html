@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>视频播放页面</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+.video-container {
+  position: relative;
+  width: 80%;
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0 0 8px 8px;
+}
+.controls button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.controls button:hover {
+  background-color: #0056b3;
+}
+.controls .time-display {
+  margin-left: 10px;
+}
+@media (min-width: 768px) {
+  .video-container {
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+  }
+  video {
+    height: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="video-container">
+    <video id="my-video" controls></video>
+    <div class="controls">
+        <span class="time-display">00:00 / 00:00</span>
+        <button onclick="reloadVideo()">刷新</button>
+    </div>
+</div>
+
+<script>
+    const videoSources = [
+        'http://api.yujn.cn/api/zzxjj.php?type=video',
+        'https://api.yujn.cn/api/nvda.php?type=video',
+        'http://api.yujn.cn/api/heisis.php?type=video',
+        'http://api.yujn.cn/api/ks_sj.php'
+    ];
+
+    const video = document.getElementById('my-video');
+    const timeDisplay = document.querySelector('.time-display');
+
+    function loadVideo() {
+        const source = videoSources[Math.floor(Math.random() * videoSources.length)];
+        if (source.includes('api/ks_sj.php')) {
+            fetch(source)
+                .then(response => response.json())
+                .then(data => {
+                    video.src = data.video;
+                    video.load();
+                    video.play();
+                })
+                .catch(error => {
+                    console.error('Error fetching video:', error);
+                });
+        } else {
+            video.src = source;
+            video.load();
+            video.play();
+        }
+    }
+
+    function reloadVideo() {
+        video.pause();
+        loadVideo();
+    }
+
+    function updateTimeDisplay() {
+        const formattedCurrentTime = formatTime(video.currentTime);
+        const formattedDuration = formatTime(video.duration);
+        timeDisplay.textContent = `${formattedCurrentTime} / ${formattedDuration}`;
+    }
+
+    function formatTime(seconds) {
+        const date = new Date(seconds * 1000);
+        const hours = date.getUTCHours();
+        const minutes = date.getUTCMinutes();
+        const secs = date.getUTCSeconds();
+        return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    window.onload = loadVideo;
+    video.addEventListener('timeupdate', updateTimeDisplay);
+</script>
+</body>
+</html>

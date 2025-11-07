@@ -1,7 +1,65 @@
-<!DOCTYPE html><html lang="">
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-<!-- 引入组件库 -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><link rel="icon" href="https://q.qlogo.cn/g?b=qq&nk=2943871928"><title>短视频/图集在线去水印解析</title></script><link href="js/adsbygoogle.js"></script><link href="js/app.d0cf4c7d.js" rel="preload" as="script"><link href="js/chunk-vendors.3542d161.js" rel="preload" as="script"></head><body><div id="app"></div><ins class="adsbygoogle" style="display:block;text-align:center" data-ad-client="ca-pub-1759509770249694" data-ad-slot="5736974812" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><script>var _hmt = _hmt || [];
-        s.parentNode.insertBefore(hm, s);
-      })();</script><script src="js/chunk-vendors.3542d161.js"></script><script src="js/app.d0cf4c7d.js"></script></body></html>
+<!--
+ * @package 短视频解析
+ * @author 小新是小白/kanxizai
+ * @version 1.0
+ * @Date 2025-03-11
+ * @link https://api.kxzjoker.cn
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta referrerpolicy="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚合短视频去水印</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <div class="widgets-container">
+        <div class="widget-card" id="weatherWidget">
+            <i class="fas fa-cloud-sun" style="background: linear-gradient(45deg, #ff9a00, #89CFF0);-webkit-background-clip: text;background-clip: text;color: transparent;"></i>
+            <span>加载中...</span>
+        </div>
+        <div class="widget-card" id="timeWidget">
+            <i class="fas fa-clock" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4);-webkit-background-clip: text;background-clip: text;color: transparent;"></i>
+            <span id="currentTime">00:00:00</span>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h1 style="text-align: center; color: #6A5ACD; margin-bottom: 30px;"> <i class="fas fa-film"></i>聚合短视频解析</h1>
+
+        <div class="input-box">
+            <i class="fas fa-link input-icon"></i>
+            <input type="text" placeholder="在这里粘贴视频链接" id="urlInput">
+            <button class="parse-btn" onclick="parseContent()">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                魔法解析！
+            </button>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="bouncing-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p style="text-align: center; color: #6A5ACD; margin-top: 10px;">正在施展解析魔法... ✨</p>
+        </div>
+
+        <div id="contentBox" style="opacity: 0; transition: opacity 0.3s ease;"></div>
+    </div>
+
+    <div class="debug-info" id="debugInfo"></div>
+    
+<script src="assets/script.js"></script>
+</body>
+
+</html>
