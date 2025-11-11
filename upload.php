@@ -1,6 +1,6 @@
 <?php
 // 允许上传的图片后缀
-$allowedExts = array("json", "txt", "html", "gif", "jpeg", "jpg", "png");
+$allowedExts = array("json", "zip", "rar", "exe", "txt", "html", "htm", "gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
 echo $_FILES["file"]["size"];
 $extension = end($temp);     // 获取文件后缀名
