@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGO批量替换工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 40px;
+        }
+        .title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        /* 上传区域居中样式 */
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 60px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            /* 核心居中样式 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .upload-area:hover {
+            border-color: #409eff;
+            background: #f8faff;
+        }
+        .upload-area i {
+            font-size: 48px;
+            color: #409eff;
+            margin-bottom: 16px;
+        }
+        .upload-text {
+            color: #666;
+            font-size: 16px;
+            text-align: center; /* 文字强制居中 */
+        }
+        /* 已上传文件列表 */
+        .file-list {
+            width: 100%;
+            margin: 20px 0;
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            padding: 15px;
+            display: none;
+        }
+        .file-list-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .file-item-name {
+            color: #666;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 60%;
+        }
+        .file-item-status {
+            font-size: 14px;
+        }
+        .status-processing {
+            color: #409eff;
+        }
+        .status-success {
+            color: #67c23a;
+        }
+        .status-error {
+            color: #f56c6c;
+        }
+        #fileInput {
+            display: none;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #409eff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+            display: block;
+            display: none;
+        }
+        .btn:hover {
+            background: #337ecc;
+        }
+        .tip {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .progress {
+            height: 6px;
+            border-radius: 3px;
+            background: #eee;
+            margin: 20px 0;
+            display: none;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #409eff;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            color: #67c23a;
+            font-size: 18px;
+        }
+        /* 模拟图标 */
+        .icon-upload::before {
+            content: "📁";
+        }
+        /* 批量下载按钮样式 */
+        .batch-download-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">LOGO批量替换工具</h1>
+        <!-- 上传区域 -->
+        <label for="fileInput" class="upload-area">
+            <i class="icon-upload"></i>
+            <div class="upload-text">点击或拖拽HTML文件到此处上传</div>
+            <input type="file" id="fileInput" accept=".html,.htm,.txt" multiple>
+        </label>
+        
+        <!-- 已上传文件列表 -->
+        <div class="file-list" id="fileList">
+            <div class="file-list-title">待处理文件列表</div>
+            <div id="fileItemsContainer"></div>
+        </div>
+        
+        <!-- 进度条 -->
+        <div class="progress" id="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <!-- 批量下载按钮 -->
+        <button class="btn batch-download-btn" id="batchDownloadBtn" style="display: none;">下载处理后的文件</button>
+        
+        <!-- 结果提示 -->
+        <div class="result" id="result">所有文件处理完成！</div>
+    </div>
+    <div class="tip">
+        替换规则：1. 替换edrawings-logo的div结构为带图片的形式；2. 清空edrawings-logo-text-icon的background-image地址<br>
+        温馨提示：文件全程在本地处理，不会上传至服务器，可放心使用
+    </div>
+
+    <script>
+        // 获取DOM元素
+        const fileInput = document.getElementById('fileInput');
+        const uploadArea = document.querySelector('.upload-area');
+        const progress = document.getElementById('progress');
+        const progressBar = document.getElementById('progressBar');
+        const batchDownloadBtn = document.getElementById('batchDownloadBtn');
+        const result = document.getElementById('result');
+        const fileList = document.getElementById('fileList');
+        const fileItemsContainer = document.getElementById('fileItemsContainer');
+        
+        // 存储处理后的文件信息
+        const processedFiles = [];
+        // 存储待处理的文件列表
+        let pendingFiles = [];
+
+        // 拖拽上传（支持多文件）
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#409eff';
+            uploadArea.style.background = '#f8faff';
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.borderColor = '#ccc';
+            uploadArea.style.background = '#fff';
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#ccc';
+            uploadArea.style.background = '#fff';
+            if (e.dataTransfer.files.length > 0) {
+                handleFiles(e.dataTransfer.files);
+            }
+        });
+
+        // 点击上传（支持多文件）
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFiles(e.target.files);
+            }
+        });
+
+        // 处理多个上传的文件
+        function handleFiles(files) {
+            // 清空之前的列表和数据
+            fileItemsContainer.innerHTML = '';
+            processedFiles.length = 0;
+            pendingFiles = [];
+
+            // 筛选出HTML/HTM文件
+            const htmlFiles = Array.from(files).filter(file => 
+                file.name.endsWith('.html') || file.name.endsWith('.htm')
+            );
+
+            if (htmlFiles.length === 0) {
+                alert('请上传至少一个HTML/HTM格式的文件！');
+                return;
+            }
+
+            // 显示文件列表
+            fileList.style.display = 'block';
+            // 初始化待处理文件列表和UI
+            htmlFiles.forEach((file, index) => {
+                pendingFiles.push({
+                    id: `file-${index}-${Date.now()}`,
+                    file: file,
+                    status: 'processing' // processing/success/error
+                });
+                
+                // 创建文件列表项
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.id = `file-item-${pendingFiles[index].id}`;
+                fileItem.innerHTML = `
+                    <div class="file-item-name">${file.name}</div>
+                    <div class="file-item-status status-processing">处理中...</div>
+                `;
+                fileItemsContainer.appendChild(fileItem);
+            });
+
+            // 开始处理文件
+            processFilesBatch();
+        }
+
+        // 批量处理文件（串行处理，避免性能问题）
+        async function processFilesBatch() {
+            progress.style.display = 'block';
+            const totalFiles = pendingFiles.length;
+            
+            for (let i = 0; i < totalFiles; i++) {
+                const fileObj = pendingFiles[i];
+                const file = fileObj.file;
+                
+                // 更新进度
+                const progressPercent = Math.round(((i) / totalFiles) * 100);
+                progressBar.style.width = `${progressPercent}%`;
+
+                try {
+                    // 读取文件内容
+                    const content = await readFileAsText(file);
+                    // 执行代码替换
+                    const replacedContent = replaceCode(content);
+                    // 生成Blob文件
+                    const blob = new Blob([replacedContent], { type: 'text/html; charset=utf-8' });
+                    
+                    // 存储处理后的文件
+                    processedFiles.push({
+                        name: file.name,
+                        blob: blob
+                    });
+                    
+                    // 更新文件状态为成功
+                    updateFileStatus(fileObj.id, 'success', '处理完成');
+                } catch (error) {
+                    console.error(`处理文件 ${file.name} 失败:`, error);
+                    // 更新文件状态为失败
+                    updateFileStatus(fileObj.id, 'error', '处理失败');
+                }
+            }
+
+            // 所有文件处理完成
+            progressBar.style.width = '100%';
+            setTimeout(() => {
+                progress.style.display = 'none';
+                result.style.display = 'block';
+                batchDownloadBtn.style.display = 'block';
+            }, 500);
+        }
+
+        // 读取文件为文本（Promise封装）
+        function readFileAsText(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsText(file, 'utf-8');
+                reader.onload = (e) => resolve(e.target.result);
+                reader.onerror = () => reject(new Error('文件读取失败'));
+            });
+        }
+
+        // 更新文件状态显示
+        function updateFileStatus(fileId, status, text) {
+            const fileItem = document.getElementById(`file-item-${fileId}`);
+            if (fileItem) {
+                const statusElement = fileItem.querySelector('.file-item-status');
+                statusElement.className = `file-item-status status-${status}`;
+                statusElement.textContent = text;
+            }
+        }
+
+        // 核心：代码替换逻辑
+        function replaceCode(content) {
+            let newContent = content;
+            // 替换规则1：替换edrawings-logo的div结构
+            const oldLogoDiv = /<div id="edrawings-logo" class="edrawings-logo-icon">/gi;
+            const newLogoDiv = '<div id="edrawings-logo"><img src="https://img14.360buyimg.com/ddimg/jfs/t1/341451/21/23386/35593/690d861cF9bb56e5b/c1ae4c15194b2c9a.jpg" alt="edrawings-logo" width="45" height="35">';
+            newContent = newContent.replace(oldLogoDiv, newLogoDiv);
+
+            // 替换规则2：清空edrawings-logo-text-icon的background-image
+            const oldStyle = /\.edrawings-logo-text-icon \{\s*background-image: url\(.*?\);\s*background-repeat: no-repeat;/gis;
+            const newStyle = '.edrawings-logo-text-icon {\n    background-image: url(\'\');\n    background-repeat: no-repeat;';
+            newContent = newContent.replace(oldStyle, newStyle);
+
+            return newContent;
+        }
+
+        // 批量下载所有处理后的文件
+        batchDownloadBtn.addEventListener('click', () => {
+            if (processedFiles.length === 0) {
+                alert('暂无处理完成的文件可下载！');
+                return;
+            }
+
+            // 逐个下载文件
+            processedFiles.forEach(file => {
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(file.blob);
+                a.download = file.name; // 使用原文件名
+                a.click();
+                // 释放URL对象
+                URL.revokeObjectURL(a.href);
+            });
+            
+            alert(`已开始下载 ${processedFiles.length} 个处理后的文件！`);
+        });
+    </script>
+</body>
+</html>
