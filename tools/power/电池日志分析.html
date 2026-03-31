@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 保持原有head部分不变 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电池容量分析工具</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --error-color: #ea4335;
+            --warning-color: #fbbc05;
+            --background-color: #f5f5f5;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --border-radius: 4px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 10px;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .progress-container {
+            margin: 10px 0;
+            display: none;
+        }
+
+        .progress-bar {
+            height: 15px;
+            background-color: #e0e0e0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+        }
+
+        .results {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .result-item {
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+        }
+
+        .result-label {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .result-value {
+            color: var(--secondary-color);
+        }
+
+        .error {
+            color: var(--error-color);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .success {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .file-info {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        .keyword-line {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .info-section {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-radius: var(--border-radius);
+        }
+
+        .info-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .info-content {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .info-content p {
+            margin-bottom: 5px;
+        }
+
+        .keyword-group {
+            margin-bottom: 10px;
+        }
+
+        .keyword-group-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .percentage-note {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border-radius: var(--border-radius);
+        }
+
+        .library-status {
+            padding: 8px;
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .library-status.loading {
+            background-color: #fff8e1;
+            color: #f57c00;
+        }
+
+        .library-status.error {
+            background-color: #ffebee;
+            color: var(--error-color);
+        }
+
+        .library-status.success {
+            background-color: #e8f5e9;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="library-status loading" id="libraryStatus">正在加载必要的库文件...</div>
+        
+        <div class="card">
+            <h1>电池容量分析工具</h1>
+            
+            <div class="info-section">
+                <div class="info-title">获取日志的方法</div>
+                <div class="info-content">
+                    <p>方法一：在拨号界面输入 <strong>*#*#284#*#*</strong></p>
+                    <p>方法二：设置 > 我的设备 > 全部参数与信息 > 连续点击"处理器"三次</p>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-title">最准确的电池百分比测量方法</div>
+                <div class="info-content">
+                    <p>1. 从1%开始充电</p>
+                    <p>2. 倒计时30秒后开始充电</p>
+                    <p>3. 充电至100%后，继续充电15-30分钟</p>
+                    <p>4. 然后获取日志进行分析</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="fileInput">选择ZIP文件</label>
+                <input type="file" id="fileInput" accept=".zip">
+                <div class="file-info" id="fileInfo"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="actualCapacity">输入实际电池容量 (mAh)</label>
+                <input type="number" id="actualCapacity" placeholder="例如: 4000" min="1">
+            </div>
+            
+            <button id="analyzeBtn">开始分析</button>
+            
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <div class="file-info" id="progressInfo">等待开始...</div>
+            </div>
+        </div>
+        
+        <div class="card results" id="resultsContainer">
+            <h2>分析结果</h2>
+            
+            <div id="resultsContent">
+                <div id="keywordLines"></div>
+                <div id="capacityResults"></div>
+            </div>
+
+            <!-- 恢复的充电周期说明部分 -->
+            <div class="info-section">
+                <div class="info-title">电池百分比说明</div>
+                <div class="info-content">
+                    <p>目前的电池百分比取决于上次充电的范围：</p>
+                    <p>- 如20%-100%，30%-100%，日志只显示80%、70%充的容量百分比</p>
+                    <p>- 如果是从1%-100%充电，并继续充电15-30分钟，显示的百分比就是目前电池健康度所能充入的最大容量</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- 备用CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('fileInput');
+            const actualCapacity = document.getElementById('actualCapacity');
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBar = document.getElementById('progressBar');
+            const progressInfo = document.getElementById('progressInfo');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const keywordLines = document.getElementById('keywordLines');
+            const capacityResults = document.getElementById('capacityResults');
+            const fileInfo = document.getElementById('fileInfo');
+            const libraryStatus = document.getElementById('libraryStatus');
+            
+            let isProcessing = false;
+            
+            // 检查JSZip是否加载成功
+            function checkJSZip() {
+                if (typeof JSZip === 'undefined') {
+                    libraryStatus.textContent = 'JSZip库加载失败，请刷新页面或检查网络连接';
+                    libraryStatus.className = 'library-status error';
+                    libraryStatus.style.display = 'block';
+                    analyzeBtn.disabled = true;
+                    return false;
+                } else {
+                    libraryStatus.textContent = 'JSZip库加载成功';
+                    libraryStatus.className = 'library-status success';
+                    libraryStatus.style.display = 'block';
+                    setTimeout(() => {
+                        libraryStatus.style.display = 'none';
+                    }, 2000);
+                    return true;
+                }
+            }
+            
+            // 初始化检查
+            setTimeout(checkJSZip, 1000);
+            
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    fileInfo.textContent = `已选择: ${file.name} (${formatFileSize(file.size)})`;
+                }
+            });
+            
+            analyzeBtn.addEventListener('click', async function() {
+                if (isProcessing) return;
+                
+                // 再次检查JSZip是否加载
+                if (!checkJSZip()) {
+                    return;
+                }
+                
+                const file = fileInput.files[0];
+                const capacity = parseFloat(actualCapacity.value);
+                
+                if (!file || !capacity || isNaN(capacity) || capacity <= 0) {
+                    alert("请选择有效的ZIP文件并输入正确的电池容量");
+                    return;
+                }
+                
+                isProcessing = true;
+                analyzeBtn.disabled = true;
+                
+                progressContainer.style.display = 'block';
+                resultsContainer.style.display = 'none';
+                keywordLines.innerHTML = '';
+                capacityResults.innerHTML = '';
+                
+                try {
+                    await processZipFile(file, capacity);
+                } catch (error) {
+                    progressInfo.textContent = '处理出错: ' + error.message;
+                    progressInfo.className = 'error';
+                    console.error(error);
+                } finally {
+                    isProcessing = false;
+                    analyzeBtn.disabled = false;
+                }
+            });
+            
+            function formatFileSize(bytes) {
+                if (bytes < 1024) return bytes + ' B';
+                else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+                else return (bytes / 1048576).toFixed(1) + ' MB';
+            }
+            
+            async function processZipFile(file, capacity) {
+                updateProgress(10, "正在解压ZIP文件...");
+                
+                const firstZip = await JSZip.loadAsync(file);
+                const firstZipFiles = [];
+                
+                firstZip.forEach((relativePath, zipEntry) => {
+                    if (!zipEntry.dir) {
+                        firstZipFiles.push({
+                            name: zipEntry.name,
+                            path: relativePath,
+                            entry: zipEntry
+                        });
+                    }
+                });
+                
+                updateProgress(30, "已解压ZIP文件，正在查找报告文件...");
+                
+                let txtContent = '';
+                const bugreportZipFiles = firstZipFiles.filter(file => 
+                    file.name.toLowerCase().includes('bugreport') && 
+                    file.name.toLowerCase().endsWith('.zip')
+                );
+                
+                if (bugreportZipFiles.length > 0) {
+                    const bugreportZipFile = bugreportZipFiles[0];
+                    updateProgress(40, `找到报告ZIP文件: ${bugreportZipFile.name}，正在解压...`);
+                    
+                    const bugreportZipData = await bugreportZipFile.entry.async('blob');
+                    const bugreportZip = await JSZip.loadAsync(bugreportZipData);
+                    const bugreportZipFilesList = [];
+                    
+                    bugreportZip.forEach((relativePath, zipEntry) => {
+                        if (!zipEntry.dir) {
+                            bugreportZipFilesList.push({
+                                name: zipEntry.name,
+                                path: relativePath,
+                                entry: zipEntry
+                            });
+                        }
+                    });
+                    
+                    updateProgress(60, "已解压报告ZIP文件，正在查找TXT文件...");
+                    
+                    const bugreportTxtFiles = bugreportZipFilesList.filter(file => 
+                        file.name.toLowerCase().includes('bugreport') && 
+                        file.name.toLowerCase().endsWith('.txt')
+                    );
+                    
+                    if (bugreportTxtFiles.length === 0) {
+                        throw new Error("在报告ZIP中未找到包含'bugreport'的TXT文件");
+                    }
+                    
+                    const bugreportTxtFile = bugreportTxtFiles[0];
+                    updateProgress(80, `找到报告TXT文件: ${bugreportTxtFile.name}，正在分析...`);
+                    
+                    txtContent = await bugreportTxtFile.entry.async('text');
+                } else {
+                    updateProgress(40, "未找到报告ZIP文件，正在查找TXT文件...");
+                    
+                    const bugreportTxtFiles = firstZipFiles.filter(file => 
+                        file.name.toLowerCase().includes('bugreport') && 
+                        file.name.toLowerCase().endsWith('.txt')
+                    );
+                    
+                    if (bugreportTxtFiles.length === 0) {
+                        throw new Error("未找到包含'bugreport'的ZIP或TXT文件");
+                    }
+                    
+                    const bugreportTxtFile = bugreportTxtFiles[0];
+                    updateProgress(80, `找到报告TXT文件: ${bugreportTxtFile.name}，正在分析...`);
+                    
+                    txtContent = await bugreportTxtFile.entry.async('text');
+                }
+                
+                analyzeTextContent(txtContent, capacity);
+            }
+            
+            function analyzeTextContent(text, capacity) {
+                updateProgress(90, "正在分析TXT文件内容...");
+                
+                // 定义所有要查找的关键字模式
+                const keywordPatterns = {
+                    cycleCount: {
+                        title: "电池循环次数",
+                        patterns: [
+                            /cycle_count.*?(\d+)/i,
+                            /cycle count.*?[:=].*?(\d+)/i
+                        ],
+                        showLastOnly: true
+                    },
+                    lastLearned: {
+                        title: "上次充电容量",
+                        patterns: [
+                            /Last learned battery capacity.*?(\d+)/i
+                        ]
+                    },
+                    minLearned: {
+                        title: "最小电池容量",
+                        patterns: [
+                            /Min learned battery capacity.*?(\d+)/i
+                        ]
+                    },
+                    maxLearned: {
+                        title: "最大电池容量",
+                        patterns: [
+                            /Max learned battery capacity.*?(\d+)/i
+                        ]
+                    }
+                };
+                
+                const foundKeywords = {};
+                const keywordLinesContent = {};
+                
+                // 初始化数据结构
+                Object.keys(keywordPatterns).forEach(key => {
+                    foundKeywords[key] = null;
+                    keywordLinesContent[key] = [];
+                });
+                
+                // 查找所有关键字行
+                const lines = text.split('\n');
+                lines.forEach(line => {
+                    Object.entries(keywordPatterns).forEach(([key, config]) => {
+                        config.patterns.forEach(pattern => {
+                            const match = line.match(pattern);
+                            if (match) {
+                                foundKeywords[key] = parseInt(match[1]);
+                                keywordLinesContent[key].push(line.trim());
+                            }
+                        });
+                    });
+                });
+                
+                // 显示所有关键字行
+                keywordLines.innerHTML = '';
+                
+                Object.entries(keywordPatterns).forEach(([key, config]) => {
+                    if (keywordLinesContent[key].length > 0) {
+                        const group = document.createElement('div');
+                        group.className = 'keyword-group';
+                        
+                        const title = document.createElement('div');
+                        title.className = 'keyword-group-title';
+                        title.textContent = `${config.title}相关行:`;
+                        group.appendChild(title);
+                        
+                        if (key === 'cycleCount' && config.showLastOnly) {
+                            const lastLine = keywordLinesContent[key][keywordLinesContent[key].length - 1];
+                            const lineElement = document.createElement('div');
+                            lineElement.className = 'keyword-line';
+                            lineElement.textContent = lastLine;
+                            group.appendChild(lineElement);
+                        } else {
+                            keywordLinesContent[key].forEach(line => {
+                                const lineElement = document.createElement('div');
+                                lineElement.className = 'keyword-line';
+                                lineElement.textContent = line;
+                                group.appendChild(lineElement);
+                            });
+                        }
+                        
+                        keywordLines.appendChild(group);
+                    }
+                });
+                
+                if (keywordLines.children.length === 0) {
+                    keywordLines.innerHTML = '<div class="error">未找到任何关键字行</div>';
+                }
+                
+                // 显示分析结果
+                if (Object.values(foundKeywords).some(val => val !== null)) {
+                    const resultContainer = document.createElement('div');
+                    
+                    // 显示循环次数
+                    if (foundKeywords.cycleCount !== null) {
+                        const cycleCount = foundKeywords.cycleCount;
+                        
+                        const cycleItem = document.createElement('div');
+                        cycleItem.className = 'result-item';
+                        
+                        const cycleLabel = document.createElement('div');
+                        cycleLabel.className = 'result-label';
+                        cycleLabel.textContent = '电池循环次数:';
+                        
+                        const cycleValue = document.createElement('div');
+                        cycleValue.className = 'result-value';
+                        cycleValue.textContent = `${cycleCount} 次`;
+                        
+                        // 添加循环次数提示
+                        const cycleNote = document.createElement('div');
+                        cycleNote.className = 'percentage-note';
+                        cycleNote.textContent = '提示：MIUI版本无电池循环次数，基于手机管家的充电次数增加，充电放电为一个循环';
+                        
+                        cycleItem.appendChild(cycleLabel);
+                        cycleItem.appendChild(cycleValue);
+                        cycleItem.appendChild(cycleNote);
+                        resultContainer.appendChild(cycleItem);
+                    }
+                    
+                    // 显示电池容量和健康度
+                    if (foundKeywords.maxLearned !== null) {
+                        const maxCapacity = foundKeywords.maxLearned;
+                        
+                        // 显示最大电池容量
+                        const maxItem = document.createElement('div');
+                        maxItem.className = 'result-item';
+                        
+                        const maxLabel = document.createElement('div');
+                        maxLabel.className = 'result-label';
+                        maxLabel.textContent = '最大电池容量:';
+                        
+                        const maxValue = document.createElement('div');
+                        maxValue.className = 'result-value';
+                        maxValue.textContent = `${maxCapacity} mAh`;
+                        
+                        // 添加最大容量提示
+                        const maxNote = document.createElement('div');
+                        maxNote.className = 'percentage-note';
+                        maxNote.textContent = '提示：目前电池容量所能充入的极限，如需更准，从1%开始充电至100%几次，取中间值';
+                        
+                        maxItem.appendChild(maxLabel);
+                        maxItem.appendChild(maxValue);
+                        maxItem.appendChild(maxNote);
+                        resultContainer.appendChild(maxItem);
+                        
+                        // 计算健康度
+                        const healthPercentage = (maxCapacity / capacity * 100).toFixed(1);
+                        
+                        const healthItem = document.createElement('div');
+                        healthItem.className = 'result-item';
+                        
+                        const healthLabel = document.createElement('div');
+                        healthLabel.className = 'result-label';
+                        healthLabel.textContent = '电池健康度:';
+                        
+                        const healthValue = document.createElement('div');
+                        healthValue.className = 'result-value';
+                        healthValue.textContent = `${healthPercentage}%`;
+                        
+                        // 添加健康度提示
+                        const healthNote = document.createElement('div');
+                        healthNote.className = 'percentage-note';
+                        healthNote.textContent = '提示：电池健康度基于最大充电容量计算，实际使用中可能会有1-3%的浮动';
+                        
+                        healthItem.appendChild(healthLabel);
+                        healthItem.appendChild(healthValue);
+                        healthItem.appendChild(healthNote);
+                        resultContainer.appendChild(healthItem);
+                    }
+                    
+                    // 显示其他容量信息
+                    const otherCapacities = document.createElement('div');
+                    otherCapacities.className = 'result-item';
+                    
+                    const otherLabel = document.createElement('div');
+                    otherLabel.className = 'result-label';
+                    otherLabel.textContent = '其他电池容量信息:';
+                    otherCapacities.appendChild(otherLabel);
+                    
+                    if (foundKeywords.lastLearned !== null) {
+                        const item = document.createElement('div');
+                        item.className = 'result-subitem';
+                        item.innerHTML = `<span>上次充电容量:</span> <span class="result-value">${foundKeywords.lastLearned} mAh</span>`;
+                        otherCapacities.appendChild(item);
+                    }
+                    
+                    if (foundKeywords.minLearned !== null) {
+                        const item = document.createElement('div');
+                        item.className = 'result-subitem';
+                        item.innerHTML = `<span>最小电池容量:</span> <span class="result-value">${foundKeywords.minLearned} mAh</span>`;
+                        otherCapacities.appendChild(item);
+                    }
+                    
+                    if (otherCapacities.children.length > 1) {
+                        resultContainer.appendChild(otherCapacities);
+                    }
+                    
+                    capacityResults.appendChild(resultContainer);
+                }
+                
+                updateProgress(100, "分析完成！");
+                resultsContainer.style.display = 'block';
+                resultsContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            function updateProgress(progress, message) {
+                progressBar.style.width = progress + '%';
+                
+                if (message) {
+                    progressInfo.textContent = message;
+                    
+                    if (progress === 100) {
+                        progressInfo.className = 'success';
+                    } else if (progress < 100) {
+                        progressInfo.className = '';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
